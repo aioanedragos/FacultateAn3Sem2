@@ -24,18 +24,19 @@ def mul(subsetMessage, i):
     result = 1
     for j in subsetMessage:
         if j != i:
-            print(j , i)
-            result = result * (j//(j-i))
-    print(result)
+            # print(j , i)
+            # print(j/(j-i))
+            result = result * (j/(j-i))
     return result
 
 def fc(subsetMessage,y_copy):
-    arr = [0,2,3]
+    arr = [0,1,2]
     count = 0
     result = 0
     while count < 3:
+        ceva = y_copy[subsetMessage[arr[count]]-1] * (mul(subsetMessage,subsetMessage[arr[count]]))
         result = result + (y_copy[subsetMessage[arr[count]]-1] * (mul(subsetMessage,subsetMessage[arr[count]])))
-        # print(result)
+        print(ceva)
         count += 1
     # print(result)
     return result
@@ -53,6 +54,7 @@ def Decoding(Message, base):
     for i in range(len(y)):
         subsetMessage.append(i + 1)
     subsetMessage.remove(mistake)
+    # print(subsetMessage)
     firstResultTry = fc(subsetMessage,y_copy)
     # if firstResultTry == 0:
     #     return True
