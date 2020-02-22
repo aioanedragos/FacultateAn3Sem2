@@ -20,20 +20,25 @@ def Coding(Message,base):
 
     return y
 
-def mul(subsetMessage, y_copy, count):
-    result = 0
-    for i in range(len(subsetMessage)):
-        if subsetMessage[i] != count
-
+def mul(subsetMessage, i):
+    result = 1
+    for j in subsetMessage:
+        if j != i:
+            print(j , i)
+            result = result * (j//(j-i))
+    print(result)
+    return result
 
 def fc(subsetMessage,y_copy):
     arr = [0,2,3]
     count = 0
-    finalSum = 0
+    result = 0
     while count < 3:
-        finalSum = finalSum + (y_copy[arr[count]] * mul(subsetMessage,y_copy,count))
-    return finalSum
-
+        result = result + (y_copy[subsetMessage[arr[count]]-1] * (mul(subsetMessage,subsetMessage[arr[count]])))
+        # print(result)
+        count += 1
+    # print(result)
+    return result
 
 def Decoding(Message, base):
     y_copy = Coding(Message, base)
