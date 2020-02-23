@@ -1,0 +1,9 @@
+E:\Facultate\CN\Tema1\bin\Debug\Tema1.exe.config
+E:\Facultate\CN\Tema1\bin\Debug\Tema1.exe
+E:\Facultate\CN\Tema1\bin\Debug\Tema1.pdb
+E:\Facultate\CN\Tema1\obj\Debug\Tema1.csprojAssemblyReference.cache
+E:\Facultate\CN\Tema1\obj\Debug\Tema1.Form1.resources
+E:\Facultate\CN\Tema1\obj\Debug\Tema1.Properties.Resources.resources
+E:\Facultate\CN\Tema1\obj\Debug\Tema1.csproj.GenerateResource.cache
+E:\Facultate\CN\Tema1\obj\Debug\Tema1.exe
+E:\Facultate\CN\Tema1\obj\Debug\Tema1.pdb
