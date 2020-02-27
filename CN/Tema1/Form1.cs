@@ -110,8 +110,8 @@ namespace Tema1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string sA = System.IO.File.ReadAllText(@"E:\Facultate\CN\Tema1\matrixA.txt");
-            string sB = System.IO.File.ReadAllText(@"E:\Facultate\CN\Tema1\matrixB.txt");
+            string sA = System.IO.File.ReadAllText(@"D:\Facultate git\CN\Tema1\matrixA.txt");
+            string sB = System.IO.File.ReadAllText(@"D:\Facultate git\CN\Tema1\matrixB.txt");
 
             int n = 0;
             while (sA[n] != '\n')
