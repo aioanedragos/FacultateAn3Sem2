@@ -1,12 +1,15 @@
-import socket,time
 import Crypto
 from Crypto.PublicKey import RSA
-from Crypto.Cipher import AES
-import hashlib
 from Crypto import Random
 from Crypto.Random import random
+import socket
+import json
 import base64
+from Crypto.Cipher import AES
+import hashlib
+import sys
 from Crypto.Cipher import PKCS1_OAEP
+import ast
 
 BS = 16
 def pad(s):
@@ -32,31 +35,39 @@ class AESCipher:
         return unpad(cipher.decrypt( enc[16:] ))
 
 
+new_key = RSA.generate(1024)
 
-# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# s.connect(("127.0.0.1",1234))
+public_key = new_key.publickey().exportKey("PEM")
 
+private_key = new_key.exportKey("PEM")
 
 public_key_merchant=b""
-
 with open('PubKM', 'rb') as f:
         public_key_merchant=f.read()
         
-PrivKC=hashlib.sha256()
-PrivKC.update(b"PrivKC")
-aes_key=PrivKC.digest()
+#Aes key==============
+sha=hashlib.sha256()
+sha.update(b"cheiameasecreta")
+aes_key=sha.digest()
 aes_cipher = AESCipher(aes_key)
 
+#=====================
 
-public_key_merchant=RSA.importKey(public_key_merchant)
+public_key_merchant = RSA.importKey(public_key_merchant)
 
-public_key_merchant = AESCipher(public_key_merchant)
+text = b'ceva nou nou'
 
-
-aes_key_encryped=public_key_merchant.encrypt(aes_key)
-
-print()
-
+encryptor = PKCS1_OAEP.new(public_key)
+encrypted = encryptor.encrypt(text) #aici vine cheia AES
 
 
-# s.close()
+decryptor = PKCS1_OAEP.new(private_key)
+decrypted = decryptor.decrypt(encrypted)
+
+
+
+
+
+# aes_key_encryped=public_key_merchant.encrypt(aes_key,32)
+# aes_key_encryped=aes_key_encryped[0]
+# public_key_encrypted=aes_cipher.encrypt(str(public_key))
