@@ -16,9 +16,9 @@ def gen_keys(bits):
     new_key = RSA.generate(bits) 
     public_key = new_key.publickey().exportKey("PEM") 
     private_key = new_key.exportKey("PEM") 
-    with open('PubKM', 'wb') as f:
+    with open('MorePubKM', 'wb') as f:
         f.write(public_key)
-    with open('PrivKM', 'wb') as f:
+    with open('MorePrivKM', 'wb') as f:
         f.write(private_key)
 
 gen_keys(1024)

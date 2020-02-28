@@ -23,10 +23,15 @@ class AESCipher:
         self.key = key
 
     def encrypt( self, raw ):
-        raw = pad(raw)
-        iv = Random.new().read( AES.block_size )
-        cipher = AES.new( self.key, AES.MODE_CBC, iv )
-        return base64.b64encode( iv + cipher.encrypt( raw ) )
+        More_public_key=b""
+        with open('MorePubK', 'rb') as f:
+            More_public_key=f.read()
+        More_public_key = RSA.importKey(More_public_key)
+
+        More_public_key = PKCS1_OAEP.new(More_public_key)
+        to_return = More_public_key.encrypt(raw.encode("utf8"))
+        return to_return
+        
 
     def decrypt( self, enc ):
         enc = base64.b64decode(enc)
@@ -37,7 +42,7 @@ class AESCipher:
 
 new_key = RSA.generate(1024)
 
-public_key = new_key.publickey().exportKey("PEM")
+public_key = new_key.publickey()
 
 private_key = new_key.exportKey("PEM")
 
@@ -50,24 +55,18 @@ sha=hashlib.sha256()
 sha.update(b"cheiameasecreta")
 aes_key=sha.digest()
 aes_cipher = AESCipher(aes_key)
-
+print(aes_key)
 #=====================
 
 public_key_merchant = RSA.importKey(public_key_merchant)
 
-text = b'ceva nou nou'
+public_key_merchant = PKCS1_OAEP.new(public_key_merchant)
 
-encryptor = PKCS1_OAEP.new(public_key)
-encrypted = encryptor.encrypt(text) #aici vine cheia AES
+#Cheia publica a utilizatorului este criptata cu o cheie AES
 
 
-decryptor = PKCS1_OAEP.new(private_key)
-decrypted = decryptor.decrypt(encrypted)
+aes_key_encryped=public_key_merchant.encrypt(aes_key)
 
 
 
-
-
-# aes_key_encryped=public_key_merchant.encrypt(aes_key,32)
-# aes_key_encryped=aes_key_encryped[0]
-# public_key_encrypted=aes_cipher.encrypt(str(public_key))
+public_key_encrypted=aes_cipher.encrypt(str(public_key))
