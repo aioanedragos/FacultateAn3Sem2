@@ -1,13 +1,24 @@
 import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(("127.0.0.1",1234))
-s.listen(1)
-(connection, address) = s.accept()
-print ("Connectd address:",address)
-while True:
-    data = connection.recv(100).decode("UTF-8")
-    if not data: break
-    print("Received: ",data)
-    if "exit" in data: break
-connection.close()
-print ("Server closed")
+HOST = '127.0.0.1'  # The server's hostname or IP address
+PORT = 1234         # The port used by the server
+
+soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+soc.bind((HOST, PORT))
+soc.listen()
+conn, addr = soc.accept()
+print('Connected by', addr)
+
+
+
+buff_size = conn.recv(2)
+public_key_encrypted_customer = conn.recv(int(buff_size))
+buff_size = conn.recv(2)
+aes_key_encrypted_customer = conn.recv(int(buff_size))
+
+
+
+
+
+
+
+conn.close()

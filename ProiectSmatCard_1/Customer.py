@@ -71,3 +71,24 @@ aes_key_encryped=public_key_merchant.encrypt(aes_key)
 
 public_key_encrypted=aes_cipher.encrypt(str(public_key))
 #=========================================================================================================
+
+HOST = '127.0.0.1'  # The server's hostname or IP address
+PORT = 1234         # The port used by the server
+
+connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+connection.connect((HOST, PORT))
+
+
+
+# print(str(len(public_key_encrypted)).encode())
+connection.send(str(len(public_key_encrypted)).encode())
+connection.send(public_key_encrypted)
+connection.send(str(len(aes_key_encryped)).encode())
+connection.send(aes_key_encryped)
+
+
+
+
+
+
+connection.close()
