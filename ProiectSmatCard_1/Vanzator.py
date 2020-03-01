@@ -14,12 +14,12 @@ import ast
 import socket
 from hashlib import sha512
 
-
 BS = 16
 def pad(s):
     return s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
 def unpad(s):
     return s[0:-s[-1]] 
+    
 
 class AESCipher:
     def __init__( self, key ):
@@ -29,7 +29,9 @@ class AESCipher:
         raw = pad(raw)
         iv = Random.new().read( AES.block_size )
         cipher = AES.new( self.key, AES.MODE_CBC, iv )
-        return base64.b64encode( iv + cipher.encrypt( raw ) )
+        return base64.b64encode( iv + cipher.encrypt( raw.encode("utf8") ) )
+
+        
 
     def decrypt( self, enc ):
         enc = base64.b64decode(enc)
@@ -82,8 +84,41 @@ public_key_customer=str(public_key_customer).encode()
 public_key_customer = RSA.importKey(public_key_customer)
 #=====================================================================================================
 
-
+#Semnarea sesiunii======================================================
 SessionID=Random.random.randint(100000000000,9999999999999)
-SessionID_signed = private_key.sing(SessionID,32)
+SessionID = str(SessionID).encode()
+hash = int.from_bytes(sha512(SessionID).digest(), byteorder='big')
+SessionID_signed = pow(hash, private_key.d, private_key.n)
+# print("Signature:", hex(SessionID_signed))
+#=======================================================================
+
+#Criptarea asimetrica pentru SessionID si semnatura acesteia
+
+sha=hashlib.sha256()
+sha.update(b"cheiameasimaisecreta")
+sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())#adding salt
+aes_key=sha.digest()
+aes_cipher = AESCipher(aes_key)
+
+#Criptare cheie aes
+public_key_customer = PKCS1_OAEP.new(public_key_customer)
+
+aes_key_encryped = public_key_customer.encrypt(aes_key)
+#Criptarea semnaturii
+SessionID_signed_encrypted = aes_cipher.encrypt(str(SessionID_signed))
+
+#Criptarea Sessiosn ID
+
+SessionID_encrypted = aes_cipher.encrypt(str(SessionID))
+
+
+conn.send(str(len(aes_key_encryped)).encode())
+conn.send(aes_key_encryped)
+conn.send(str(len(SessionID_encrypted)).encode())
+conn.send(SessionID_encrypted)
+conn.send(str(len(SessionID_signed_encrypted)).encode())
+conn.send(SessionID_signed_encrypted)
+
+
 
 conn.close()

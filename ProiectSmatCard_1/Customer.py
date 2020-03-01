@@ -84,4 +84,13 @@ connection.send(str(len(aes_key_encryped)).encode())
 connection.send(aes_key_encryped)
 
 
+
+buf_size=connection.recv(3)
+aes_key_merchant_encrypted=connection.recv(int(buf_size))
+buf_size=connection.recv(2)
+SessionID_encryped=connection.recv(int(buf_size))
+buf_size=connection.recv(3)
+SessionID_signed_merchant_encrypted=connection.recv(int(buf_size))
+
+
 connection.close()
