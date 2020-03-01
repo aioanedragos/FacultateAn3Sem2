@@ -77,20 +77,36 @@ PORT = 1234         # The port used by the server
 connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 connection.connect((HOST, PORT))
 
-
+#Trimiterea cheii publice catre vanzator ca sa poate semna Sesiunea
 connection.send(str(len(public_key_encrypted)).encode())
 connection.send(public_key_encrypted)
 connection.send(str(len(aes_key_encryped)).encode())
 connection.send(aes_key_encryped)
+#=================================================================
 
 
-
+#Primirea semnaturii sesiunii===========================================
 buf_size=connection.recv(3)
 aes_key_merchant_encrypted=connection.recv(int(buf_size))
 buf_size=connection.recv(2)
 SessionID_encryped=connection.recv(int(buf_size))
 buf_size=connection.recv(3)
 SessionID_signed_merchant_encrypted=connection.recv(int(buf_size))
+#======================================================================
+private_key = RSA.importKey(private_key)
+
+private_key1 = PKCS1_OAEP.new(private_key)
+
+aes_key_merchant = private_key1.decrypt(aes_key_merchant_encrypted)
+
+aes_cipher_merchant = AESCipher(aes_key_merchant)
+
+SessionID = aes_cipher_merchant.decrypt(SessionID_encryped)
+
+SessionID_signed_merchant = aes_cipher_merchant.decrypt(SessionID_signed_merchant_encrypted)
+
+
+
 
 
 connection.close()
