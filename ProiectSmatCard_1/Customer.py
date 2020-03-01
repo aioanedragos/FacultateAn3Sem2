@@ -10,6 +10,7 @@ import hashlib
 import sys
 from Crypto.Cipher import PKCS1_OAEP
 import ast
+from hashlib import sha512
 
 BS = 16
 def pad(s):
@@ -93,6 +94,8 @@ SessionID_encryped=connection.recv(int(buf_size))
 buf_size=connection.recv(3)
 SessionID_signed_merchant_encrypted=connection.recv(int(buf_size))
 #======================================================================
+
+
 private_key = RSA.importKey(private_key)
 
 private_key1 = PKCS1_OAEP.new(private_key)
@@ -102,10 +105,40 @@ aes_key_merchant = private_key1.decrypt(aes_key_merchant_encrypted)
 aes_cipher_merchant = AESCipher(aes_key_merchant)
 
 SessionID = aes_cipher_merchant.decrypt(SessionID_encryped)
+SessionID = str(SessionID)[4:-2]#Corectarea SessionsIS dupa primire
+
 
 SessionID_signed_merchant = aes_cipher_merchant.decrypt(SessionID_signed_merchant_encrypted)
 
 
+#Creatrea PI PM PO
+PI=dict()
+PI["CardN"]="1111222233334444"
+PI["CardExp"]="10/20"
+PI["CCode"]="123"
+PI["Sid"]=int(SessionID)
+PI["Amount"]=100
+PI["PubKC"]=str(public_key)
+#print("PUB K=",str(public_key))
+PI["NC"]=Random.random.randint(100000000000,9999999999999)
+PI["M"]="Enter merchant name here"
+PI_json=json.dumps(PI)
+
+hash = int.from_bytes(sha512(str(PI_json).encode()).digest(), byteorder='big')
+PI_json_hash_signed = pow(hash, private_key.d, private_key.n)
+print("Signature:", hex(PI_json_hash_signed))
+
+
+hash = int.from_bytes(sha512(str(PI_json).encode()).digest(), byteorder='big')
+hashFromSignature = pow(PI_json_hash_signed, private_key.e, private_key.n)
+print("Semnatura PI realizata:", hash == hashFromSignature)
+print("Semnatura PI esuata:", hash != hashFromSignature)
+
+
+PM=dict()
+PM["PI"]=PI_json
+PM["SigC"]=PI_json_hash_signed
+PM_json=json.dumps(PM)
 
 
 
