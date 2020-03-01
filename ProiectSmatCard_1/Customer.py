@@ -23,14 +23,11 @@ class AESCipher:
         self.key = key
 
     def encrypt( self, raw ):
-        More_public_key=b""
-        with open('MorePubK', 'rb') as f:
-            More_public_key=f.read()
-        More_public_key = RSA.importKey(More_public_key)
+        raw = pad(raw)
+        iv = Random.new().read( AES.block_size )
+        cipher = AES.new( self.key, AES.MODE_CBC, iv )
+        return base64.b64encode( iv + cipher.encrypt( raw.encode("utf8") ) )
 
-        More_public_key = PKCS1_OAEP.new(More_public_key)
-        to_return = More_public_key.encrypt(raw.encode("utf8"))
-        return to_return
         
 
     def decrypt( self, enc ):
@@ -40,12 +37,18 @@ class AESCipher:
         return unpad(cipher.decrypt( enc[16:] ))
 
 
+
+#generare chei client=======================
 new_key = RSA.generate(1024)
 
 public_key = new_key.publickey()
 
 private_key = new_key.exportKey("PEM")
+#==========================================
 
+
+
+#Preluarea cheii publice a vanzatorului
 public_key_merchant=b""
 with open('PubKM', 'rb') as f:
         public_key_merchant=f.read()
@@ -55,18 +58,16 @@ sha=hashlib.sha256()
 sha.update(b"cheiameasecreta")
 aes_key=sha.digest()
 aes_cipher = AESCipher(aes_key)
-print(aes_key)
+# print(aes_key)
 #=====================
 
+
+#Criptare asimetrica: criptarea cheiei aes cu cheia vanzatorului si cheia publica a clientului cu cheia aes
 public_key_merchant = RSA.importKey(public_key_merchant)
 
 public_key_merchant = PKCS1_OAEP.new(public_key_merchant)
 
-#Cheia publica a utilizatorului este criptata cu o cheie AES
-
-
 aes_key_encryped=public_key_merchant.encrypt(aes_key)
 
-
-
 public_key_encrypted=aes_cipher.encrypt(str(public_key))
+#=========================================================================================================
