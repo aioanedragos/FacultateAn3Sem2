@@ -41,8 +41,7 @@ class AESCipher:
 #generare chei client=======================
 new_key = RSA.generate(1024)
 
-public_key = new_key.publickey()
-
+public_key = new_key.publickey().exportKey("PEM")
 private_key = new_key.exportKey("PEM")
 #==========================================
 
@@ -79,16 +78,10 @@ connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 connection.connect((HOST, PORT))
 
 
-
-# print(str(len(public_key_encrypted)).encode())
 connection.send(str(len(public_key_encrypted)).encode())
 connection.send(public_key_encrypted)
 connection.send(str(len(aes_key_encryped)).encode())
 connection.send(aes_key_encryped)
-
-
-
-
 
 
 connection.close()
