@@ -88,5 +88,39 @@ PM_json_encrypted=str(PM_json_encrypted).encode()
 
 PM_json=aes_cipher_customer.decrypt(PM_json_encrypted)
 
+# print(PM_json)
+
+PM = json.loads(PM_json )
+
+# print(PM)
+
+PI_json = PM["PI"]
+
+PI = json.loads(PI_json)
+
+
+public_key_customer=PI["PubKC"]
+public_key_customer=str(public_key_customer)[2:-1]
+public_key_customer=str(public_key_customer).replace("\\n",'\n')#fixing aes decryption result
+public_key_customer=str(public_key_customer).encode()
+
+
+aux=dict()
+aux["Sid"]=int(PI["Sid"])
+aux["PubKC"]=str(public_key_customer)
+aux["amount"]=PI["Amount"]
+aux_json=json.dumps(aux)
+
+
+aux_json_hash_signed=aes_cipher_merchant.decrypt(aux_json_hash_signed_encryped)
+aux_json_hash_signed=str(aux_json_hash_signed)
+# print(aux_json_hash_signed)
+aux_json_hash_signed=aux_json_hash_signed[2:-1]
+aux_json_hash_signed=int(aux_json_hash_signed)
+print(aux_json_hash_signed)
+l=list()
+l.append(aux_json_hash_signed)
+aux_json_hash_signed=l.copy()
+print(aux_json_hash_signed)
 
 conn.close()
