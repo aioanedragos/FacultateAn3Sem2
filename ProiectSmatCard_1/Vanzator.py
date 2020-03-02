@@ -86,7 +86,6 @@ public_key_customer = RSA.importKey(public_key_customer)
 
 #Semnarea sesiunii======================================================
 SessionID=Random.random.randint(100000000000,9999999999999)
-print(SessionID)
 SessionID = str(SessionID).encode()
 hash = int.from_bytes(sha512(SessionID).digest(), byteorder='big')
 SessionID_signed = pow(hash, private_key.d, private_key.n)

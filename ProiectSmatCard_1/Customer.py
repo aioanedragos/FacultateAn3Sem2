@@ -140,6 +140,27 @@ PM["PI"]=PI_json
 PM["SigC"]=PI_json_hash_signed
 PM_json=json.dumps(PM)
 
+PO=dict()
+PO["OrderDesc"]="Enter order description here"
+PO["Sid"]=int(SessionID)
+PO["Amount"]=100
+PO_json=json.dumps(PO)
+
+hash = int.from_bytes(sha512(str(PO_json).encode()).digest(), byteorder='big')
+PO_json_hash_signed = pow(hash, private_key.d, private_key.n)
+
+hash = int.from_bytes(sha512(str(PO_json).encode()).digest(), byteorder='big')
+hashFromSignature = pow(PO_json_hash_signed, private_key.e, private_key.n)
+print("Semnatura PO realizata:", hash == hashFromSignature)
+print("Semnatura PO esuata:", hash != hashFromSignature)
+
+
+
+PO["SigC"]=PO_json_hash_signed
+
+
+#============================================================================
+
 
 
 connection.close()
