@@ -122,7 +122,7 @@ aux_json_hash_signed=str(aux_json_hash_signed)
 aux_json_hash_signed=aux_json_hash_signed[2:-1]
 aux_json_hash_signed = str(aux_json_hash_signed).encode()
 aux_json_hash_signed=int(aux_json_hash_signed)
-
+# print("Semnatura = ", aux_json_hash_signed)
 # print(aux_json_hash_signed)
 # l=list()
 # l.append(aux_json_hash_signed)
@@ -136,10 +136,10 @@ private_key_merchant=RSA.importKey(private_key_merchant)
 
 
 aux_json_hash=int.from_bytes(sha512(aux_json).digest(), byteorder='big')
-# print(aux_json_hash)
+print(aux_json_hash)
 hashFromSignature = pow(aux_json_hash_signed, private_key_merchant.e, private_key_merchant.n)
 # print(hashFromSignature)
-print("Semnatura pasului 4 realizata:", hash == hashFromSignature)
-print("Semnatura pasului 4 esuata:", hash != hashFromSignature)
+print("Semnatura pasului 4 realizata:", aux_json_hash == hashFromSignature)
+print("Semnatura pasului 4 esuata:", aux_json_hash != hashFromSignature)
 
 conn.close()

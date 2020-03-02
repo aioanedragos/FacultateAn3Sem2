@@ -175,11 +175,14 @@ aux_json=json.dumps(aux)
 aux_json = str(aux_json).encode()
 hash = int.from_bytes(sha512(aux_json).digest(), byteorder='big')
 aux_json_hash_signed = pow(hash, private_key.d, private_key.n)
+# print("Semnatura = ", aux_json_hash_signed)
 
 
 
 hash = int.from_bytes(sha512(aux_json).digest(), byteorder='big')
+print(hash)
 hashFromSignature = pow(aux_json_hash_signed, private_key.e, private_key.n)
+print(hashFromSignature)
 print("Semnatura pasului 4 realizata:", hash == hashFromSignature)
 print("Semnatura pasului 4 esuata:", hash != hashFromSignature)
 
