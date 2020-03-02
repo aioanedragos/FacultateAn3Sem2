@@ -55,12 +55,38 @@ print('Connected by', addr)
 
 buf_size=conn.recv(3)
 aes_key_customer_encrypted=conn.recv(int(buf_size))
+
 buf_size=conn.recv(3)
 aes_key_merchant_encrypted=conn.recv(int(buf_size))
+
 buf_size=conn.recv(4)
 PM_json_encrypted=conn.recv(int(buf_size))
+
 buf_size=conn.recv(3)
 aux_json_hash_signed_encryped=conn.recv(int(buf_size))
+
+
+private_key=b""
+with open('PrivKPG', 'rb') as f:
+        private_key=f.read()
+private_key=RSA.importKey(private_key)
+
+private_key1 = PKCS1_OAEP.new(private_key)
+
+aes_key_customer=private_key1.decrypt(aes_key_customer_encrypted)
+aes_key_merchant=private_key1.decrypt(aes_key_merchant_encrypted)
+
+aes_cipher_customer = AESCipher(aes_key_customer)
+aes_cipher_merchant = AESCipher(aes_key_merchant)
+
+
+PM_json_encrypted=aes_cipher_merchant.decrypt(PM_json_encrypted)
+
+PM_json_encrypted=str(PM_json_encrypted)[7:-4]
+
+PM_json_encrypted=str(PM_json_encrypted).encode()
+
+PM_json=aes_cipher_customer.decrypt(PM_json_encrypted)
 
 
 conn.close()

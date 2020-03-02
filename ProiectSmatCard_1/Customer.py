@@ -187,8 +187,10 @@ PO_json_encrypted=aes_cipher_merchant.encrypt(str(PO_json))
 
 connection.send(str(len(aes_key_for_paymentgateway_encrypted)).encode())
 connection.send(aes_key_for_paymentgateway_encrypted)
+
 connection.send(str(len(PM_json_encrypted)).encode())
 connection.send(PM_json_encrypted)
+
 connection.send(str(len(PO_json_encrypted)).encode())
 connection.send(PO_json_encrypted)
 

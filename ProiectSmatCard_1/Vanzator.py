@@ -155,7 +155,7 @@ PM_json_deencrypted=aes_cipher.decrypt(PM_json_encrypted)
 
 # print("PM JSON ENC=",PM_json_deencrypted)
 
-PM_json_encrypted=aes_cipher_for_paymentgateway.encrypt(str(PM_json_encrypted))
+PM_json_encrypted=aes_cipher_for_paymentgateway.encrypt(str(PM_json_deencrypted))
 
 PO_json=aes_cipher.decrypt(PO_json_encrypted)
 PO=json.loads(PO_json)
@@ -164,6 +164,7 @@ aux=dict()
 aux["Sid"]=int(SessionID)
 aux["PubKC"]=str(public_key_customer.exportKey())
 aux["amount"]=PO["Amount"]
+# print(PO["Amount"])
 aux_json=json.dumps(aux)
 
 
@@ -199,10 +200,13 @@ print('Connected to', HOST,':', PORT)
 print("Connecting to Payment Gateway...")
 soc.send(str(len(aes_key_customer_for_paymentgateway_encrypted)).encode())
 soc.send(aes_key_customer_for_paymentgateway_encrypted)
+
 soc.send(str(len(aes_key_for_paymentgateway_encrypted)).encode())
 soc.send(aes_key_for_paymentgateway_encrypted)
+
 soc.send(str(len(PM_json_encrypted)).encode())
 soc.send(PM_json_encrypted)
+
 soc.send(str(len(aux_json_hash_signed_encryped)).encode())
 soc.send(aux_json_hash_signed_encryped)
 
