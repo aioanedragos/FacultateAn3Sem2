@@ -126,8 +126,7 @@ PI_json=json.dumps(PI)
 
 hash = int.from_bytes(sha512(str(PI_json).encode()).digest(), byteorder='big')
 PI_json_hash_signed = pow(hash, private_key.d, private_key.n)
-print("Signature:", hex(PI_json_hash_signed))
-
+# print("Signature:", hex(PI_json_hash_signed))
 
 hash = int.from_bytes(sha512(str(PI_json).encode()).digest(), byteorder='big')
 hashFromSignature = pow(PI_json_hash_signed, private_key.e, private_key.n)
@@ -161,6 +160,26 @@ PO["SigC"]=PO_json_hash_signed
 
 #============================================================================
 
+public_key_paymentgateway=b""
+with open('PubKPG', 'rb') as f:
+        public_key_paymentgateway=f.read()
+public_key_paymentgateway=RSA.importKey(public_key_paymentgateway)
 
+
+sha=hashlib.sha256()
+sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())#adding salt
+aes_key_for_paymentgateway=sha.digest()
+aes_cipher_for_paymentgateway = AESCipher(aes_key_for_paymentgateway)
+
+
+public_key_paymentgateway1 = PKCS1_OAEP.new(public_key_paymentgateway)
+
+aes_key_for_paymentgateway_encrypted = public_key_paymentgateway1.encrypt(aes_key_for_paymentgateway)
+
+PM_json_encrypted=aes_cipher_for_paymentgateway.encrypt(str(PM_json))
+
+PM_json_encrypted=aes_cipher_merchant.encrypt(str(PM_json_encrypted))
+
+PO_json_encrypted=aes_cipher_merchant.encrypt(str(PO_json))
 
 connection.close()
