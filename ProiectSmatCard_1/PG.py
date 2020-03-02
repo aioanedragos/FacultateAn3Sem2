@@ -107,20 +107,39 @@ public_key_customer=str(public_key_customer).encode()
 
 aux=dict()
 aux["Sid"]=int(PI["Sid"])
+print("SessionID = ",aux["Sid"])
 aux["PubKC"]=str(public_key_customer)
+print("Public key Customer = ", aux["PubKC"])
 aux["amount"]=PI["Amount"]
+print("amount = ", aux["amount"])
 aux_json=json.dumps(aux)
+aux_json = str(aux_json).encode()
 
 
 aux_json_hash_signed=aes_cipher_merchant.decrypt(aux_json_hash_signed_encryped)
 aux_json_hash_signed=str(aux_json_hash_signed)
 # print(aux_json_hash_signed)
 aux_json_hash_signed=aux_json_hash_signed[2:-1]
+aux_json_hash_signed = str(aux_json_hash_signed).encode()
 aux_json_hash_signed=int(aux_json_hash_signed)
-print(aux_json_hash_signed)
-l=list()
-l.append(aux_json_hash_signed)
-aux_json_hash_signed=l.copy()
-print(aux_json_hash_signed)
+
+# print(aux_json_hash_signed)
+# l=list()
+# l.append(aux_json_hash_signed)
+# aux_json_hash_signed=l.copy()
+# print(aux_json_hash_signed)
+
+public_key_merchant=b""
+with open('PrivKM', 'rb') as f:
+        private_key_merchant=f.read()
+private_key_merchant=RSA.importKey(private_key_merchant)
+
+
+aux_json_hash=int.from_bytes(sha512(aux_json).digest(), byteorder='big')
+# print(aux_json_hash)
+hashFromSignature = pow(aux_json_hash_signed, private_key_merchant.e, private_key_merchant.n)
+# print(hashFromSignature)
+print("Semnatura pasului 4 realizata:", hash == hashFromSignature)
+print("Semnatura pasului 4 esuata:", hash != hashFromSignature)
 
 conn.close()
