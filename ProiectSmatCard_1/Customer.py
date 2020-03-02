@@ -160,6 +160,7 @@ PO["SigC"]=PO_json_hash_signed
 
 #============================================================================
 
+#Realizarea cripatarii PM intai cu cheia publica a PG si dupa cripatarea PO si PM cu cheia publica a M
 public_key_paymentgateway=b""
 with open('PubKPG', 'rb') as f:
         public_key_paymentgateway=f.read()
@@ -181,5 +182,14 @@ PM_json_encrypted=aes_cipher_for_paymentgateway.encrypt(str(PM_json))
 PM_json_encrypted=aes_cipher_merchant.encrypt(str(PM_json_encrypted))
 
 PO_json_encrypted=aes_cipher_merchant.encrypt(str(PO_json))
+
+#======================================================================================================
+
+connection.send(str(len(aes_key_for_paymentgateway_encrypted)).encode())
+connection.send(aes_key_for_paymentgateway_encrypted)
+connection.send(str(len(PM_json_encrypted)).encode())
+connection.send(PM_json_encrypted)
+connection.send(str(len(PO_json_encrypted)).encode())
+connection.send(PO_json_encrypted)
 
 connection.close()
