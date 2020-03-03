@@ -88,17 +88,13 @@ PM_json_encrypted=str(PM_json_encrypted).encode()
 
 PM_json=aes_cipher_customer.decrypt(PM_json_encrypted)
 
-# print(PM_json)
 
-PM = json.loads(PM_json )
+PM = json.loads(PM_json)
 
-# print(PM)
 
 PI_json = PM["PI"]
 
 PI = json.loads(PI_json)
-
-
 public_key_customer=PI["PubKC"]
 public_key_customer=str(public_key_customer)[2:-1]
 public_key_customer=str(public_key_customer).replace("\\n",'\n')#fixing aes decryption result
@@ -107,27 +103,18 @@ public_key_customer=str(public_key_customer).encode()
 
 aux=dict()
 aux["Sid"]=int(PI["Sid"])
-print("SessionID = ",aux["Sid"])
 aux["PubKC"]=str(public_key_customer)
-print("Public key Customer = ", aux["PubKC"])
 aux["amount"]=PI["Amount"]
-print("amount = ", aux["amount"])
 aux_json=json.dumps(aux)
 aux_json = str(aux_json).encode()
 
 
 aux_json_hash_signed=aes_cipher_merchant.decrypt(aux_json_hash_signed_encryped)
 aux_json_hash_signed=str(aux_json_hash_signed)
-# print(aux_json_hash_signed)
 aux_json_hash_signed=aux_json_hash_signed[2:-1]
 aux_json_hash_signed = str(aux_json_hash_signed).encode()
 aux_json_hash_signed=int(aux_json_hash_signed)
-# print("Semnatura = ", aux_json_hash_signed)
-# print(aux_json_hash_signed)
-# l=list()
-# l.append(aux_json_hash_signed)
-# aux_json_hash_signed=l.copy()
-# print(aux_json_hash_signed)
+
 
 public_key_merchant=b""
 with open('PubKM', 'rb') as f:
@@ -136,10 +123,20 @@ public_key_merchant=RSA.importKey(public_key_merchant)
 
 
 aux_json_hash=int.from_bytes(sha512(aux_json).digest(), byteorder='big')
-print(aux_json_hash)
 hashFromSignature = pow(aux_json_hash_signed, public_key_merchant.e, public_key_merchant.n)
-# print(hashFromSignature)
+
 print("Semnatura pasului 4 realizata:", aux_json_hash == hashFromSignature)
 print("Semnatura pasului 4 esuata:", aux_json_hash != hashFromSignature)
+
+PI_json = str(PI_json).encode()
+
+PI_json_hash = int.from_bytes(sha512(PI_json).digest(), byteorder='big')
+
+public_key_customer = RSA.importKey(public_key_customer)
+hashFromSignature =hashFromSignature = pow(PM["SigC"], public_key_customer.e, public_key_customer.n)
+
+
+print("Semnatura PI realizata:", PI_json_hash == hashFromSignature)
+print("Semnatura PI esuata:", PI_json_hash != hashFromSignature)
 
 conn.close()
