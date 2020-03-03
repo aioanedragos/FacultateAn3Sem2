@@ -130,14 +130,14 @@ aux_json_hash_signed=int(aux_json_hash_signed)
 # print(aux_json_hash_signed)
 
 public_key_merchant=b""
-with open('PrivKM', 'rb') as f:
-        private_key_merchant=f.read()
-private_key_merchant=RSA.importKey(private_key_merchant)
+with open('PubKM', 'rb') as f:
+        public_key_merchant=f.read()
+public_key_merchant=RSA.importKey(public_key_merchant)
 
 
 aux_json_hash=int.from_bytes(sha512(aux_json).digest(), byteorder='big')
 print(aux_json_hash)
-hashFromSignature = pow(aux_json_hash_signed, private_key_merchant.e, private_key_merchant.n)
+hashFromSignature = pow(aux_json_hash_signed, public_key_merchant.e, public_key_merchant.n)
 # print(hashFromSignature)
 print("Semnatura pasului 4 realizata:", aux_json_hash == hashFromSignature)
 print("Semnatura pasului 4 esuata:", aux_json_hash != hashFromSignature)

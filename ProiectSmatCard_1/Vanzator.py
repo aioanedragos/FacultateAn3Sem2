@@ -162,12 +162,8 @@ PO=json.loads(PO_json)
 
 aux=dict()
 aux["Sid"]=int(SessionID)
-print("SessionID = ",aux["Sid"])
 aux["PubKC"]=str(public_key_customer.exportKey())
-print("Public key Customer = ", aux["PubKC"])
 aux["amount"]=PO["Amount"]
-print("amount = ", aux["amount"])
-# print(PO["Amount"])
 aux_json=json.dumps(aux)
 
 
