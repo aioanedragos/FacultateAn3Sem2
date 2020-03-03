@@ -193,4 +193,20 @@ connection.send(PM_json_encrypted)
 connection.send(str(len(PO_json_encrypted)).encode())
 connection.send(PO_json_encrypted)
 
+
+
+try:
+    connection.settimeout(5)
+    buf_size=connection.recv(3)
+    aux_json_encryped=connection.recv(int(buf_size))
+    aux_json=aes_cipher.decrypt(aux_json_encryped)
+    aux_json=str(aux_json)[5:-3]
+    aux=json.loads(aux_json)
+    print(aux["Resp"])
+
+except:
+    print("Socket timeout exceeded!")
+
+
+
 connection.close()

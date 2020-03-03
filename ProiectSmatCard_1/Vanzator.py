@@ -226,7 +226,10 @@ aes_key_paymentgateway=private_key.decrypt(aes_key_paymentgateway_encrypted)
 aes_cipher_paymentgateway = AESCipher(aes_key_paymentgateway)
 aux_json=aes_cipher_paymentgateway.decrypt(aux_json_encrypted)
 
-aux_json_encrypted=aes_cipher_customer.encrypt(str(aux_json))
+aux_json_encrypted=aes_chiper_customer.encrypt(str(aux_json))
+
+conn.send(str(len(aux_json_encrypted)).encode())
+conn.send(aux_json_encrypted)
 
 
 conn.close()
