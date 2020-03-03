@@ -129,7 +129,6 @@ PI_json_hash_signed = pow(hash, private_key.d, private_key.n)
 
 hash = int.from_bytes(sha512(str(PI_json).encode()).digest(), byteorder='big')
 hashFromSignature = pow(PI_json_hash_signed, private_key.e, private_key.n)
-print(hashFromSignature)
 print("Semnatura PI realizata:", hash == hashFromSignature)
 print("Semnatura PI esuata:", hash != hashFromSignature)
 

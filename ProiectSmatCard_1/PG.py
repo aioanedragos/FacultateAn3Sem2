@@ -145,6 +145,44 @@ elif (PI_json_hash == hashFromSignature1) == False:
 else:
     Resp = "Totul este ok"
 
-print(Resp)
+
+
+aux=dict()
+aux["Resp"]=Resp
+aux["Sid"]=PI["Sid"]
+if Resp=="Totul este ok":
+    aux["amount"]=PI["Amount"]
+else:
+    aux["amount"]=0
+aux["NC"]=PI["NC"]
+aux_json=json.dumps(aux)
+aux_json = str(aux_json).encode()
+hash = int.from_bytes(sha512(aux_json).digest(), byteorder='big')
+aux_json_hash_signed = pow(hash, private_key.d, private_key.n)
+
+aux=dict()
+aux["Resp"]=Resp
+aux["Sid"]=PI["Sid"]
+aux["SigPG"]=aux_json_hash_signed
+aux_json=json.dumps(aux)
+
+
+
+sha=hashlib.sha256()
+sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())#adding salt
+aes_key=sha.digest()
+aes_cipher = AESCipher(aes_key)
+
+aux_json_encrypted = aes_cipher.encrypt(aux_json)
+
+public_key_merchant1 = PKCS1_OAEP.new(public_key_merchant)
+
+aes_key_encrypted = public_key_merchant1.encrypt(aes_key)
+
+
+conn.send(str(len(aes_key_encrypted)).encode())
+conn.send(aes_key_encrypted)
+conn.send(str(len(aux_json_encrypted)).encode())
+conn.send(aux_json_encrypted)
 
 conn.close()

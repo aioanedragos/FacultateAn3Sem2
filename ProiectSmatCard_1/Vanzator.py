@@ -215,6 +215,12 @@ soc.send(aux_json_hash_signed_encryped)
 
 
 
+buf_size=soc.recv(3)
+aes_key_paymentgateway_encrypted=soc.recv(int(buf_size))
+buf_size=soc.recv(3)
+aux_json_encrypted=soc.recv(int(buf_size))
+
+
 
 conn.close()
 soc.close()
