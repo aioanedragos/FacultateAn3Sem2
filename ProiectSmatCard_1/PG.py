@@ -125,18 +125,26 @@ public_key_merchant=RSA.importKey(public_key_merchant)
 aux_json_hash=int.from_bytes(sha512(aux_json).digest(), byteorder='big')
 hashFromSignature = pow(aux_json_hash_signed, public_key_merchant.e, public_key_merchant.n)
 
-print("Semnatura pasului 4 realizata:", aux_json_hash == hashFromSignature)
-print("Semnatura pasului 4 esuata:", aux_json_hash != hashFromSignature)
+
+
+
+
 
 PI_json = str(PI_json).encode()
 
 PI_json_hash = int.from_bytes(sha512(PI_json).digest(), byteorder='big')
 
 public_key_customer = RSA.importKey(public_key_customer)
-hashFromSignature =hashFromSignature = pow(PM["SigC"], public_key_customer.e, public_key_customer.n)
+hashFromSignature1 = pow(PM["SigC"], public_key_customer.e, public_key_customer.n)
 
 
-print("Semnatura PI realizata:", PI_json_hash == hashFromSignature)
-print("Semnatura PI esuata:", PI_json_hash != hashFromSignature)
+if (aux_json_hash == hashFromSignature) == False:
+    Resp = "Semnatura vanzator invalida"
+elif (PI_json_hash == hashFromSignature1) == False:
+    Resp = "Semnatura client invalida"
+else:
+    Resp = "Totul este ok"
+
+print(Resp)
 
 conn.close()
