@@ -220,6 +220,13 @@ aes_key_paymentgateway_encrypted=soc.recv(int(buf_size))
 buf_size=soc.recv(3)
 aux_json_encrypted=soc.recv(int(buf_size))
 
+private_key = PKCS1_OAEP.new(private_key)
+
+aes_key_paymentgateway=private_key.decrypt(aes_key_paymentgateway_encrypted)
+aes_cipher_paymentgateway = AESCipher(aes_key_paymentgateway)
+aux_json=aes_cipher_paymentgateway.decrypt(aux_json_encrypted)
+
+aux_json_encrypted=aes_cipher_customer.encrypt(str(aux_json))
 
 
 conn.close()
