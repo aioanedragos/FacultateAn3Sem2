@@ -1,0 +1,12 @@
+E:\Facultate\CN\Tema2\Tema2\bin\Debug\Tema2.exe.config
+E:\Facultate\CN\Tema2\Tema2\bin\Debug\Tema2.exe
+E:\Facultate\CN\Tema2\Tema2\bin\Debug\Tema2.pdb
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.csprojAssemblyReference.cache
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.Form1.resources
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.Properties.Resources.resources
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.csproj.GenerateResource.cache
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.exe
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.pdb
+E:\Facultate\CN\Tema2\Tema2\bin\Debug\MathNet.Numerics.dll
+E:\Facultate\CN\Tema2\Tema2\bin\Debug\MathNet.Numerics.xml
+E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.csproj.CopyComplete
