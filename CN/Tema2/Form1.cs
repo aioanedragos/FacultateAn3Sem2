@@ -79,30 +79,34 @@ namespace Tema2
                 n++;
             }
 
-            int[,] A = new int[n / 2, n / 2];
+            double[,] A = new double[n / 2, n / 2];
             double[,] _A = new double[n / 2, n / 2];
 
             int i = 0, j = 0;
+            int max = 0;
+            
             foreach (var row in sA.Split('\n'))
             {
                 j = 0;
+                int nr = 0;
                 foreach (var col in row.Trim().Split(' '))
                 {
-                    A[i, j] = int.Parse(col.Trim());
+                    
+                    if (col.Trim().Contains('.'))
+                        nr++;
+                    A[i, j] = double.Parse(col.Trim(),System.Globalization.CultureInfo.InvariantCulture);
                     _A[i, j] = (double)A[i, j];
                     j++;
                 }
+                if (nr > max)
+                    max = nr;
                 i++;
             }
 
             n = n / 2;
-
-            double det = determinant(_A, n);
-            if(det==0)
-            {
-                label1.Text = "Impossible!";
-                return;
-            }
+            if(max != 0)
+                n -= max;
+          
 
             double[,] L = new double[n, n];
             double[,] U = new double[n, n];
@@ -202,30 +206,33 @@ namespace Tema2
                 n++;
             }
 
-            int[,] A = new int[n / 2, n / 2];
+            double[,] A = new double[n / 2, n / 2];
             double[,] _A = new double[n / 2, n / 2];
 
             int i = 0, j = 0;
+            int max = 0;
+
             foreach (var row in sA.Split('\n'))
             {
                 j = 0;
+                int nr = 0;
                 foreach (var col in row.Trim().Split(' '))
                 {
-                    A[i, j] = int.Parse(col.Trim());
+
+                    if (col.Trim().Contains('.'))
+                        nr++;
+                    A[i, j] = double.Parse(col.Trim(), System.Globalization.CultureInfo.InvariantCulture);
                     _A[i, j] = (double)A[i, j];
                     j++;
                 }
+                if (nr > max)
+                    max = nr;
                 i++;
             }
 
             n = n / 2;
-
-            double det = determinant(_A, n);
-            if (det == 0)
-            {
-                label1.Text = "Impossible!";
-                return;
-            }
+            if (max != 0)
+                n -= max;
 
             double[,] L = new double[n, n];
             double[,] U = new double[n, n];
@@ -286,30 +293,33 @@ namespace Tema2
                 n++;
             }
 
-            int[,] A = new int[n / 2, n / 2];
+            double[,] A = new double[n / 2, n / 2];
             double[,] _A = new double[n / 2, n / 2];
 
             int i = 0, j = 0;
+            int max = 0;
+
             foreach (var row in sA.Split('\n'))
             {
                 j = 0;
+                int nr = 0;
                 foreach (var col in row.Trim().Split(' '))
                 {
-                    A[i, j] = int.Parse(col.Trim());
+
+                    if (col.Trim().Contains('.'))
+                        nr++;
+                    A[i, j] = double.Parse(col.Trim(), System.Globalization.CultureInfo.InvariantCulture);
                     _A[i, j] = (double)A[i, j];
                     j++;
                 }
+                if (nr > max)
+                    max = nr;
                 i++;
             }
 
             n = n / 2;
-
-            double det = determinant(_A, n);
-            if (det == 0)
-            {
-                label1.Text = "Impossible!";
-                return;
-            }
+            if (max != 0)
+                n -= max;
 
             double[,] L = new double[n, n];
             double[,] U = new double[n, n];
@@ -366,13 +376,14 @@ namespace Tema2
             int l = 0;
             foreach (var element in sb.Split('\n'))
             {
-                b[l, 1] = (double)int.Parse(element);
+                b[l, 0] = (double)int.Parse(element);
                 l++;
             }
 
             double[,] y = new double[m, 1];
 
             y[0, 0] = b[0, 0] / L[0, 0];
+            Console.Write(y[0, 0]);
 
             for (i = 1; i < n; i++) {
                 double sum = 0;
@@ -380,7 +391,7 @@ namespace Tema2
                     if (i > j) {
                         if (i == j)
                         {
-                            y[j + 1, 0] = (b[j, 0] - sum) / L[i, j];
+                            y[j, 0] = (b[j, 0] - sum) / L[i, j];
                         }
                         else {
                             sum += L[i, j] * y[j, 0];
