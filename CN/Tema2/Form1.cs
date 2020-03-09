@@ -321,8 +321,18 @@ namespace Tema2
             if (max != 0)
                 n -= max;
 
+            double[,] A_init = new double[n, n];
+
+            for (i = 0; i < n; i++)
+                for (j = 0; j < n; j++)
+                    A_init[i, j] = A[i, j]; 
+                    
+
+
             double[,] L = new double[n, n];
             double[,] U = new double[n, n];
+            
+
 
             for (i = 0; i < n; i++)
             {
@@ -332,21 +342,32 @@ namespace Tema2
                     for (j = 0; j < i; j++)
                         sum += (L[i, j] * U[j, k]);
                     U[i, k] = (double)A[i, k] - sum;
+                    A[i, k] = (double)A_init[i, k] - sum;
                 }
 
                 for (int k = i; k < n; k++)
                 {
                     if (i == k)
                         L[i, i] = 1;
-                    else
+                    if(i!=k)
                     {
                         double sum = 0;
                         for (j = 0; j < i; j++)
                             sum += (L[k, j] * U[j, i]);
                         L[k, i] = ((double)A[k, i] - sum) / U[i, i];
+                        A[k, i] = ((double)A_init[k, i] - sum) / U[i, i];
                     }
                 }
             }
+
+
+/*            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                    Console.Write(A[i, j].ToString() + " ");
+                Console.WriteLine();
+            }*/
+
             //==================================
             var filePath2 = string.Empty;
 
@@ -372,7 +393,8 @@ namespace Tema2
             }
             m++;
 
-            double[,] b = new double[m, m];
+            double[,] b = new double[m, 1];
+            double[,] b_init = new double[m, 1];
             int l = 0;
             foreach (var element in sb.Split('\n'))
             {
@@ -380,27 +402,49 @@ namespace Tema2
                 l++;
             }
 
+            for (i = 0; i < m; i++)
+                b_init[i, 0] = b[i, 0];
             double[,] y = new double[m, 1];
 
-            y[0, 0] = b[0, 0] / L[0, 0];
-            Console.Write(y[0, 0]);
-
+            y[0, 0] = b[0, 0];
             for (i = 1; i < n; i++) {
                 double sum = 0;
                 for (j = 0; j < n; j++) {
-                    if (i > j) {
-                        if (i == j)
-                        {
-                            y[j, 0] = (b[j, 0] - sum) / L[i, j];
-                        }
-                        else {
-                            sum += L[i, j] * y[j, 0];
-                        }
+                    if (i > j)
+                        sum += A[i, j] * b[j, 0];
+                    if (i == j)
+                    {
+                        y[j, 0] = (b[j, 0] - sum);
+                        b[j, 0] = (b[j, 0] - sum);
+
                     }
                 }
             }
+            Console.WriteLine("Y:");
             for (i = 0; i < m; i++)
                 Console.WriteLine(y[i, 0]);
+
+            double[,] x = new double[m, 1];
+
+            x[m - 1, 0] = b[m - 1, 0] / A[n - 1, n - 1];
+
+
+            for (i = n - 2; i >= 0; i--)
+            {
+                double sum = 0;
+                for (j = n - 1; j >= 0; j--)
+                {
+                    if (i < j)
+                        sum += A[i, j] * x[j, 0];
+                    else
+                        x[j, 0] = (b[j, 0] - sum) / A[i, j];
+
+                }
+            }
+
+            Console.WriteLine("X:");
+            for (i = 0; i < m; i++)
+                Console.WriteLine(x[i, 0]);
 
         }
     }
