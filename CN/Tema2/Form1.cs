@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MathNet.Numerics.LinearAlgebra;
-using MathNet.Numerics.LinearAlgebra.Double;
+using Accord.Math;
+using MathNet.Numerics.Providers.LinearAlgebra;
 
 namespace Tema2
 {
     public partial class Form1 : Form
     {
+        Norm norm;
+        Norm.OneNorm();
         public static Random rand = new Random();
 
         public Form1()
