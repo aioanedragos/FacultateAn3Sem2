@@ -22,3 +22,11 @@ D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.csproj.GenerateResour
 D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.csproj.CopyComplete
 D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.exe
 D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.pdb
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.Controls.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.Controls.UI.Dialogs.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.Controls.UI.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.DirectX.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.MediaFramework.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.Shared.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.Tools.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\VisioForge.Types.dll

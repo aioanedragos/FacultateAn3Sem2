@@ -1,15 +1,27 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Accord.Math;
-using MathNet.Numerics.Providers.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
+using VisioForge.Shared.Accord.Math;
 
 namespace Tema2
 {
     public partial class Form1 : Form
     {
-        Norm norm;
-        Norm.OneNorm();
+
+        public void calculate(double[,] points)
+        {
+            var distanceArray = new double[points.Length, points.Length];
+
+            for (int i = 0; i < points.Length; i++)
+                for (int j = 0; j < points.Length; j++)
+                    distanceArray[i, j] = Distance(points[i, 0], points[i, 1], points[j, 0], points[j, 1]);
+        }
+
+        public static double Distance(double x1, double y1, double x2, double y2)
+        => Math.Sqrt(((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)));
+
         public static Random rand = new Random();
 
         public Form1()
@@ -442,6 +454,9 @@ namespace Tema2
             for (i = 0; i < m; i++)
                 Console.WriteLine(x[i, 0]);
 
+            
+
+            
         }
     }
 }
