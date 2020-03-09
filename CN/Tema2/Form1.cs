@@ -254,13 +254,143 @@ namespace Tema2
                 }
             }
 
-
-
             double determinantU = 1;
             for (i = 0; i < n; i++)
                 determinantU *= U[i, i];
 
             Console.WriteLine(determinantU.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var filePath1 = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "D:\\Facultate Git\\FacultateAn3Sem2\\CN\\Tema2";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath1 = openFileDialog.FileName;
+                }
+            }
+
+            string sA = System.IO.File.ReadAllText(filePath1);
+
+            int n = 0;
+            while (sA[n] != '\n')
+            {
+                n++;
+            }
+
+            int[,] A = new int[n / 2, n / 2];
+            double[,] _A = new double[n / 2, n / 2];
+
+            int i = 0, j = 0;
+            foreach (var row in sA.Split('\n'))
+            {
+                j = 0;
+                foreach (var col in row.Trim().Split(' '))
+                {
+                    A[i, j] = int.Parse(col.Trim());
+                    _A[i, j] = (double)A[i, j];
+                    j++;
+                }
+                i++;
+            }
+
+            n = n / 2;
+
+            double det = determinant(_A, n);
+            if (det == 0)
+            {
+                label1.Text = "Impossible!";
+                return;
+            }
+
+            double[,] L = new double[n, n];
+            double[,] U = new double[n, n];
+
+            for (i = 0; i < n; i++)
+            {
+                for (int k = i; k < n; k++)
+                {
+                    double sum = 0;
+                    for (j = 0; j < i; j++)
+                        sum += (L[i, j] * U[j, k]);
+                    U[i, k] = (double)A[i, k] - sum;
+                }
+
+                for (int k = i; k < n; k++)
+                {
+                    if (i == k)
+                        L[i, i] = 1;
+                    else
+                    {
+                        double sum = 0;
+                        for (j = 0; j < i; j++)
+                            sum += (L[k, j] * U[j, i]);
+                        L[k, i] = ((double)A[k, i] - sum) / U[i, i];
+                    }
+                }
+            }
+            //==================================
+            var filePath2 = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "D:\\Facultate Git\\FacultateAn3Sem2\\CN\\Tema2";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath1 = openFileDialog.FileName;
+                }
+            }
+
+            string sb = System.IO.File.ReadAllText(filePath1);
+
+            int m = 0;
+            while (sb[m] != '\n')
+            {
+                m++;
+            }
+            m++;
+
+            double[,] b = new double[m, m];
+            int l = 0;
+            foreach (var element in sb.Split('\n'))
+            {
+                b[l, 1] = (double)int.Parse(element);
+                l++;
+            }
+
+            double[,] y = new double[m, 1];
+
+            y[0, 0] = b[0, 0] / L[0, 0];
+
+            for (i = 1; i < n; i++) {
+                double sum = 0;
+                for (j = 0; j < n; j++) {
+                    if (i > j) {
+                        if (i == j)
+                        {
+                            y[j + 1, 0] = (b[j, 0] - sum) / L[i, j];
+                        }
+                        else {
+                            sum += L[i, j] * y[j, 0];
+                        }
+                    }
+                }
+            }
+            for (i = 0; i < m; i++)
+                Console.WriteLine(y[i, 0]);
+
         }
     }
 }
