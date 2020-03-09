@@ -10,3 +10,15 @@ E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.pdb
 E:\Facultate\CN\Tema2\Tema2\bin\Debug\MathNet.Numerics.dll
 E:\Facultate\CN\Tema2\Tema2\bin\Debug\MathNet.Numerics.xml
 E:\Facultate\CN\Tema2\Tema2\obj\Debug\Tema2.csproj.CopyComplete
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\Tema2.exe.config
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\Tema2.exe
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\Tema2.pdb
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\MathNet.Numerics.dll
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\bin\Debug\MathNet.Numerics.xml
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.csprojAssemblyReference.cache
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.Form1.resources
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.Properties.Resources.resources
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.csproj.GenerateResource.cache
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.csproj.CopyComplete
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.exe
+D:\Facultate Git\FacultateAn3Sem2\CN\Tema2\obj\Debug\Tema2.pdb

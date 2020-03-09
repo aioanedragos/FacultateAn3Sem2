@@ -130,13 +130,13 @@ namespace Tema2
                     }
                 }
             }
-
             Console.WriteLine("A:");
             for (i = 0; i < n; i++)
             {
                 for (j = 0; j < n; j++)
                 {
                     Console.Write(A[i, j].ToString() + " ");
+                    
                 }
                 Console.WriteLine();
             }
@@ -175,6 +175,92 @@ namespace Tema2
             //    Console.WriteLine();
             //}
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var filePath1 = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "E:\\Facultate\\CN\\Tema2\\Tema2";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath1 = openFileDialog.FileName;
+                }
+            }
+
+            string sA = System.IO.File.ReadAllText(filePath1);
+
+            int n = 0;
+            while (sA[n] != '\n')
+            {
+                n++;
+            }
+
+            int[,] A = new int[n / 2, n / 2];
+            double[,] _A = new double[n / 2, n / 2];
+
+            int i = 0, j = 0;
+            foreach (var row in sA.Split('\n'))
+            {
+                j = 0;
+                foreach (var col in row.Trim().Split(' '))
+                {
+                    A[i, j] = int.Parse(col.Trim());
+                    _A[i, j] = (double)A[i, j];
+                    j++;
+                }
+                i++;
+            }
+
+            n = n / 2;
+
+            double det = determinant(_A, n);
+            if (det == 0)
+            {
+                label1.Text = "Impossible!";
+                return;
+            }
+
+            double[,] L = new double[n, n];
+            double[,] U = new double[n, n];
+
+            for (i = 0; i < n; i++)
+            {
+                for (int k = i; k < n; k++)
+                {
+                    double sum = 0;
+                    for (j = 0; j < i; j++)
+                        sum += (L[i, j] * U[j, k]);
+                    U[i, k] = (double)A[i, k] - sum;
+                }
+
+                for (int k = i; k < n; k++)
+                {
+                    if (i == k)
+                        L[i, i] = 1;
+                    else
+                    {
+                        double sum = 0;
+                        for (j = 0; j < i; j++)
+                            sum += (L[k, j] * U[j, i]);
+                        L[k, i] = ((double)A[k, i] - sum) / U[i, i];
+                    }
+                }
+            }
+
+
+
+            double determinantU = 1;
+            for (i = 0; i < n; i++)
+                determinantU *= U[i, i];
+
+            Console.WriteLine(determinantU.ToString());
         }
     }
 }
