@@ -16,13 +16,13 @@ namespace Tema2
             return sum;
         }
 
-        public double Norma_1(double[,] ceva) {
+        public double Norma_1(double[,] ceva,int n) {
             double norma = 0;
-            int n;
-            if (ceva.Length % 2 == 1)
-                n = ceva.Length / 2 - 1;
-            else
-                n = ceva.Length / 2;
+            //int n;
+            //if (ceva.Length % 2 == 1)
+            //    n = ceva.Length / 2 - 1;
+            //else
+            //    n = ceva.Length / 2;
 
             Console.WriteLine(ceva.Length.ToString());
             for (int i = 0; i < n; i++) {
@@ -148,6 +148,11 @@ namespace Tema2
             double[,] L = new double[n, n];
             double[,] U = new double[n, n];
 
+            double[] L_vector = new double[n * (n + 1) / 2];
+            double[] U_vector = new double[n * (n + 1) / 2];
+
+            int contor = 0;
+            int contor2 = 0;
             for (i = 0; i < n; i++)
             {
                 for (int k = i; k < n; k++)
@@ -156,6 +161,8 @@ namespace Tema2
                     for (j = 0; j < i; j++)
                         sum += (L[i, j] * U[j, k]);
                     U[i, k] = A[i, k] - sum;
+                    U_vector[contor] = A[i, k] - sum;
+                    contor++;
                 }
 
                 for (int k = i; k < n; k++)
@@ -168,6 +175,8 @@ namespace Tema2
                         for (j = 0; j < i; j++)
                             sum += (L[k, j] * U[j, i]);
                         L[k, i] = (A[k, i] - sum) / U[i, i];
+                        L_vector[contor2] = (A[k, i] - sum) / U[i, i];
+                        contor2++;
                     }
                 }
             }
@@ -191,22 +200,23 @@ namespace Tema2
             {
                 for (j = 0; j < n; j++)
                 {
-                    label2.Text += U[i, j].ToString() + " ";
-                    Console.Write(U[i, j].ToString() + " ");
+                    label2.Text += U[i,j].ToString() + " ";
+                   // Console.Write(U[i, j].ToString() + " ");
                 }
                 label2.Text += '\n';
-                Console.WriteLine();
             }
+            
+            Console.WriteLine();
 
             label3.Text = "Matricea L\n";
             //Console.WriteLine("L:");
 
-            for (i = 0; i < n; i++)
+            for (i = 0; i < n ; i++)
             {
                 for (j = 0; j < n; j++)
                 {
-                    label3.Text += L[i, j].ToString() + " ";
-                    Console.Write(L[i, j].ToString() + " ");
+                    label3.Text += L[i,j].ToString() + " ";
+                   // Console.Write(L[i, j].ToString() + " ");
                 }
                 label3.Text += '\n';
                 Console.WriteLine();
@@ -766,7 +776,7 @@ namespace Tema2
             }
 
 
-            var rezultat = Norma_1(A_final);
+            var rezultat = Norma_1(A_final,n);
 
             label5.Text = rezultat.ToString();
 
@@ -783,6 +793,233 @@ namespace Tema2
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var filePath1 = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "E:\\Facultate\\CN\\Tema2\\Tema2";
+                openFileDialog.Filter = "txt files (.txt)|.txt|All files (.)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath1 = openFileDialog.FileName;
+                }
+            }
+
+            string sA = System.IO.File.ReadAllText(filePath1);
+
+            int n = 0;
+            while (sA[n] != '\n')
+            {
+                n++;
+            }
+            double[,] A = new double[n / 2, n / 2];
+            double[,] _A = new double[n / 2, n / 2];
+
+            int i = 0, j = 0;
+            int max = 0;
+
+            foreach (var row in sA.Split('\n'))
+            {
+                j = 0;
+                int nr = 0;
+                foreach (var col in row.Trim().Split(' '))
+                {
+
+                    if (col.Trim().Contains('.'))
+                        nr++;
+                    A[i, j] = double.Parse(col.Trim(), System.Globalization.CultureInfo.InvariantCulture);
+                    _A[i, j] = (double)A[i, j];
+                    j++;
+                }
+                if (nr > max)
+                    max = nr;
+                i++;
+            }
+
+            if (max != 0)
+                n = n - max;
+
+            n = n / 2;
+            Console.WriteLine(n.ToString());
+
+
+
+            double[,] L = new double[n, n];
+            double[,] U = new double[n, n];
+
+            double[] L_vector = new double[n * (n + 1) / 2];
+            double[] U_vector = new double[n * (n + 1) / 2];
+
+            int contor = 0;
+            int contor2 = 0;
+            for (i = 0; i < n; i++)
+            {
+                for (int k = i; k < n; k++)
+                {
+                    double sum = 0;
+                    for (j = 0; j < i; j++)
+                        sum += (L[i, j] * U[j, k]);
+                    U[i, k] = A[i, k] - sum;
+                    U_vector[contor] = A[i, k] - sum;
+                    contor++;
+                }
+
+                for (int k = i; k < n; k++)
+                {
+                    if (i == k)
+                        L[i, i] = 1;
+                    else
+                    {
+                        double sum = 0;
+                        for (j = 0; j < i; j++)
+                            sum += (L[k, j] * U[j, i]);
+                        L[k, i] = (A[k, i] - sum) / U[i, i];
+                        L_vector[contor2] = (A[k, i] - sum) / U[i, i];
+                        contor2++;
+                    }
+                }
+            }
+            /*Console.WriteLine("A:");
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write(A[i, j].ToString() + " ");
+                    
+                }
+                Console.WriteLine();
+            }*/
+            label1.Text = "Descompunerea LU";
+
+
+            label2.Text = "Matricea U\n";
+            //Console.WriteLine("U:");
+
+            for (i = 0; i < n * (n + 1) / 2; i++)
+            {
+                //for (j = 0; j < n; j++)
+                // {
+                label2.Text += U_vector[i].ToString() + " ";
+                // Console.Write(U[i, j].ToString() + " ");
+                //}
+
+            }
+            label2.Text += '\n';
+            Console.WriteLine();
+
+            label3.Text = "Matricea L\n";
+            //Console.WriteLine("L:");
+
+            for (i = 0; i < n * (n + 1) / 2; i++)
+            {
+                // for (j = 0; j < n; j++)
+                //{
+                label3.Text += L_vector[i].ToString() + " ";
+                // Console.Write(L[i, j].ToString() + " ");
+                // }
+                label3.Text += '\n';
+                Console.WriteLine();
+            }
+
+
+            var filePath2 = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "D:\\Facultate Git\\FacultateAn3Sem2\\CN\\Tema2";
+                openFileDialog.Filter = "txt files (.txt)|.txt|All files (.)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath1 = openFileDialog.FileName;
+                }
+            }
+
+            string sb = System.IO.File.ReadAllText(filePath1);
+            int m;
+            m = n;
+
+
+            double[,] b = new double[m, 1];
+            double[,] b_init = new double[m, 1];
+            int l = 0;
+            foreach (var element in sb.Split('\n'))
+            {
+                b[l, 0] = (double)int.Parse(element);
+                l++;
+            }
+            for (i = 0; i < m; i++)
+                Console.WriteLine(b[i, 0]);
+
+            for (i = 0; i < m; i++)
+                b_init[i, 0] = b[i, 0];
+
+
+
+            for (i = 1; i < n; i++)
+            {
+                double sum = 0;
+                for (j = 0; j < n; j++)
+                {
+                    if (i > j)
+                        sum += L_vector[i-1+j] * b[j, 0];
+                    if (i == j)
+                    {
+                        //y[j, 0] = (b[j, 0] - sum);
+                        b[j, 0] = (b[j, 0] - sum);
+
+                    }
+                }
+            }
+            label2.Text = "Matricea Y\n";
+            Console.WriteLine("Y:");
+            for (i = 0; i < m; i++)
+                label2.Text += b[i, 0].ToString() + '\n';
+            //Console.WriteLine(b[i, 0]);
+
+            double[,] x = new double[m, 1];
+
+            x[m - 1, 0] = b[m - 1, 0] / A[n - 1, n - 1];
+
+
+            for (i = n - 2; i >= 0; i--)
+            {
+                double sum = 0;
+                for (j = n - 1; j >= 0; j--)
+                {
+                    if (i < j)
+                        sum += U_vector[(i+j)%3] * x[j, 0];
+                    else
+                        x[j, 0] = (b[j, 0] - sum) / A[i, j];
+
+                }
+            }
+
+            for (i = 0; i < n; i++)
+                Console.WriteLine(x[i, 0]);
+
+            //Matrix<double> L_check = DenseMatrix.OfArray(L);
+            //Matrix<double> U_check = DenseMatrix.OfArray(L);
+
+            //var C_check = L_check.Multiply(U_check);
+            //Console.WriteLine("C:");
+            //for (i = 0; i < n; i++)
+            //{
+            //    for (j = 0; j < n; j++)
+            //    {
+            //        Console.Write(C_check[i, j].ToString() + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
         }
     }
 }
