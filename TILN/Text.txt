@@ -1,0 +1,297 @@
+Achieving challenging goals – such as school success – requires
+willingness to control impulses and work hard, as well as the ability to manage emotions associated with goal pursuit. While it is
+clear that academic achievement is predicted by intellectual abilities (Poropat, 2009), it is less clear what is the predictive power of
+psychological attributes at the intersection of emotions, cognition
+and self-regulation. Conscientiousness – a personality trait that
+primarily describes impulse control and self-regulation of behavior
+(John, Naumann, & Soto, 2008) – has been consistently related to
+academic achievement (Poropat, 2009). In this paper we test
+another two proposed predictors of school success – Grit and
+Emotion Regulation Ability (ERA). Grit is a lower-level personality
+trait in the domain of Conscientiousness (Duckworth, Peterson,
+Matthews, & Kelly, 2007). Both Conscientiousness and Grit
+describe typical everyday performance or behavior (how people
+generally behave). By contrast, ERA is an ability to reason about
+effectiveness of different emotion regulation strategies and
+describes maximal capacity for solving emotion-related problems
+(Brackett, Rivers, & Salovey, 2011). While both self-regulation
+traits (such as Conscientiousness and Grit) and ERA predict important outcomes (Brackett et al., 2011; Duckworth et al., 2007;
+Roberts, Walton, & Bogg, 2005), they are only modestly and
+inconsistently correlated to each other (e.g., Day & Carroll, 2004;
+Lopes, Salovey, & Straus, 2003; Lopes et al., 2004).
+Conscientiousness is the Big Five trait that ‘‘describes socially
+prescribed impulse control that facilitates task- and goal-related
+behavior’’ (p. 120, John et al., 2008). As a super-trait, Conscientiousness includes a number of lower-level traits or facets, such
+as self-control and perseverance (e.g., MacCann, Duckworth, &
+Roberts, 2009; Roberts, Chernyshenko, Stark, & Goldberg, 2005).
+Grit is a noncognitive personality trait involving persistence and
+long-term consistency of interests (Duckworth et al., 2007). As
+such, Grit is conceptually closely related to Conscientiousness; persistence, a major component of Grit has been identified as one of
+the facets of Conscientiousness in multiple studies (e.g., Hough &
+Ones, 2001; MacCann et al., 2009). Conscientiousness emerged as
+the personality trait most consistently and strongly correlated to
+academic success (Poropat, 2009), and initial studies of Grit
+showed relationships to various measures of academic achievement (Duckworth & Quinn, 2009; Duckworth et al., 2007).
+In contrast to the personality traits of Conscientiousness and
+Grit, ERA is an ability (a component of emotional intelligence;
+Mayer & Salovey, 1997) and describes individual’s maximal capacity to evaluate emotion regulation strategies and to influence one’s
+affective experience and actions in ways that promote goal attainment in emotionally charged situations (e.g., presence of competing goals, experience of challenges or obstacles). This ability is
+distinct from personality traits describing a tendency toward positive or negative emotions (i.e., Extraversion and Neuroticism;
+Mayer, Roberts, & Barsade, 2008) and rather describes the capacity
+to reason about a variety of emotions. The present study aims to
+http://dx.doi.org/10.1016/j.jrp.2014.06.005
+0092-6566/ 2014 Elsevier Inc. All rights reserved.
+⇑ Corresponding author. Address: Yale University, Department of Psychology, P.O.
+Box 208205, New Haven, CT 06511, United States.
+E-mail address: Zorana.ivcevic@yale.edu (Z. Ivcevic)
+E-mail address: Zorana1.ivcevic@yale.edu (Z. Ivcevic)
+E-mail address: Zorana2.ivcevic@yale.edu (Z. Ivcevic)
+E-mail address: Zorana3.ivcevic@yale.edu (Z. Ivcevic)
+E-mail address: Zorana4.ivcevic@yale.edu (Z. Ivcevic)
+E-mail address: Zorana5.ivcevic@yale.edu (Z. Ivcevic)
+E-mail address: Zorana6.ivcevic@yale.edu (Z. Ivcevic)
+
+examine the independent predictive power of Conscientiousness,
+Grit, and ERA in relation to measures of high school success.
+1.1. Conscientiousness and Grit in prediction of school success
+Conscientiousness is a super-trait that encompasses a family of
+lower-level traits in the broad domain of self-regulation (John
+et al., 2008; Roberts, Lejuez, Krueger, Richards, & Hill, 2014). Analyses of trait adjectives and personality inventories define a range of
+lower-level Conscientiousness-related traits, with five traits identified in multiple studies: orderliness, self-control, industriousness,
+responsibility, and traditionalism (Roberts et al., 2014). Two most
+common traits are orderliness and industriousness (Roberts et al.,
+2014). Orderliness can be defined as ‘‘the overarching tendency
+to be prepared’’ (p. 1317, Roberts et al., 2014), which includes a
+predisposition toward neatness and planfulness, while industriousness describes a predisposition to be hard-working and persistent in the face of obstacles (Roberts et al., 2014). Developmental
+precursors of Conscientiousness, such as childhood impulsivity
+and delay of gratification, further support the conceptualization
+of Conscientiousness as a self-regulation trait (Roberts et al., 2014).
+Conscientiousness is most commonly assessed using self-report
+inventories that ask about typical or average behavioral tendencies
+and preferences (e.g., tendency to be generally reliable and hardworking, liking order; John et al., 2008). Different personality
+inventories are based on different theoretical perspectives and
+thus assess a range of facets, but no single inventory assesses the
+whole breadth of the Conscientiousness domain (Roberts et al.,
+2014). Despite the imperfect correspondence in the facets
+measured by the various Big Five inventories, there is very strong
+convergence between Conscientiousness domain scores across
+measures (John et al., 2008), suggesting that these inventories adequately estimate a person’s position on the broad trait domain.
+Conscientiousness is correlated with a variety of behaviors that
+require planning and self-control of behavior, such as smoking,
+excessive alcohol use, drug use, and violence (Roberts, Chernyshenko,
+et al., 2005; Roberts, Walton, et al., 2005). Furthermore, Conscientiousness is consistently related to school success across age
+and level of schooling, and largely independent of general intelligence (Poropat, 2009). Conscientiousness predicts school success
+across cultures (e.g., U.S.: Noftle & Robins, 2007; Estonia: Laidra,
+Pullmann, & Allik, 2007; Croatia: Bratko, Chamorro-Premuzic, &
+Saks, 2006) and it predicts achievement over tutors’ expectations
+of performance (Chamorro-Premuzic & Furnham, 2003) and prior
+achievement (Noftle & Robins, 2007).
+Research suggests that both broad and lower-level traits predict
+important outcomes and that lower-level traits can be even more
+powerful predictors than broad traits (O’Connor and Paunonen,
+2007). Roberts, Chernyshenko, et al. (2005) found that lower-level
+Conscientiousness facets had differential relationship with important criteria, such as work dedication and drug use, and that
+using these lower-level scales improved criterion validity over
+the use of broad trait measures. Similarly, when predicting
+academic achievement, several studies found the Achievement
+Striving facet of Conscientiousness to be more highly correlated
+with academic achievement than the broad trait of Conscientiousness (Chamorro-Premuzic & Furnham, 2003; Paunonen, 1998;
+Paunonen & Ashton, 2001).
+In this study we test whether the most recently proposed
+lower-level Conscientiousness trait of Grit improves criterion
+validity in relation to school success outcomes over the broad Conscientiousness domain. Grit was proposed as a Conscientiousnessrelated trait that combines consistency of interests and persistence
+in pursuit of long-term goals (Duckworth et al., 2007). The conceptualization of Grit as a lower-level trait in the Conscientiousness
+domain is supported both conceptually – with persistence being
+a component of Grit and emerging as a facet of Conscientiousness
+in some analyses (e.g., Hough & Ones, 2001; MacCann et al., 2009) –
+and also based on measurement overlap. A self-report scale assessing Grit asks questions about typical everyday behavior in relation
+to achievement goals (e.g., ‘‘I am a hard worker’’ and ‘‘New ideas
+and projects sometimes distract me from previous ones’’;
+Duckworth & Quinn, 2009; Duckworth et al., 2007), similar to
+assessment of Conscientiousness (e.g., ‘‘Tends to be lazy’’, reversed,
+and ‘‘Perseveres until the task is finished’’ on the Big Five Inventory
+Conscientiousness scale; John et al., 2008).
+Grit predicted achievement-related outcomes, such as GPA and
+retention in the United States Military Academy (Duckworth et al.,
+2007), and it predicted academic success after controlling for educational aspirations and prior achievement (Strayhorn, 2013). In
+spite of its high correlation with Conscientiousness (rs between
+.70 and .77), Grit was a unique predictor of highest educational
+degree obtained and rankings in the National Spelling Bee
+(Duckworth & Quinn, 2009). The present paper contributes to the
+understanding of this newly proposed self-regulation trait by
+examining its predictive validity in relation to outcomes of high
+school success, as well as testing its discriminant and incremental
+validity in relation to the broad trait of Conscientiousness.
+1.2. Emotion Regulation Ability in prediction of school success
+In addition to willingness to work hard, school success requires
+the ability to regulate emotions associated with social interactions
+and achievement-related experiences. Emotion regulation involves
+processes of monitoring and modifying emotional reactions in
+order to reach a goal, which can happen at any point in the emotion process, from selecting situations, changing situation appraisals, to modulating physiological and behavior reactions (Gross,
+1998). Emotion regulation is necessary when one’s experienced
+emotions are distressing (e.g., when test anxiety can interfere with
+performance) or when they are positive, but distracting or overwhelming (e.g., when one cannot focus in class anticipating an
+exciting weekend trip). Successful emotion regulation involves
+understanding the consequences of different reactions in emotion-laden situations and having knowledge of effective strategies
+(Brackett et al., 2011).
+Emotion regulation can be conceptualized in terms of typical
+behavior – people’s tendency to use different emotion regulation
+strategies on a daily basis – and also in terms of maximal performance – people’s capacity to reason about and identify effective
+strategies for influencing emotions. This distinction between typical and maximal performance is often made when comparing personality traits (defined as typical performance, how people
+generally behave) and intelligence (defined as maximal performance on ability tests; Goff & Ackerman, 1992). An example of
+emotion regulation conceptualized in terms of typical performance is the Emotion Regulation Questionnaire (Gross & John,
+2003), which measures people’s tendency to engage in cognitive
+reappraisal and expressive suppression on a daily basis. The questionnaire items are similar to those on personality trait inventories
+and ask how much respondents agree with statement like: ‘‘When
+I want to feel less negative emotion, I change the way I am
+thinking about the situation’’ (reappraisal) or ‘‘When I am feeling
+negative emotions, I make sure not to express them’’ (expressive
+suppression).
+In this paper, we conceptualize ERA as maximal performance
+by measuring it with an ability test that describes hypothetical emotion-laden situations and asks respondents to evaluate
+the efficacy of different strategies in reaching a specified goal
+(Brackett et al., 2011). Defined as maximal performance, ERA is a
+component of emotional intelligence and distinct from personality
+traits (Brackett & Mayer, 2003; Day & Carroll, 2004). Across studies,
+
+
+
+reasons of participant recruitment. These practical considerations
+in individual studies make it more important to accumulate results
+from multiple samples that can then be subjected to metaanalyses.
+Another limitation of the present study is conceptual in nature.
+We compared typical performance traits (Conscientiousness, Grit)
+that describe regulation of behavior across a variety of goal situations with the maximal performance attribute of ERA that is specific to modulation of behavior in emotionally charged situations.
+It can be argued though that in the context of school performance
+this is a relevant comparison. Academic goals and outcomes are
+commonly associated with discrete emotions (e.g., attainment of
+mastery goals is related to hope and pride; Perkun, Elliot, &
+Maier, 2006) and therefore self-regulation in pursuit of these goals
+occurs in emotionally charged situations and necessitates influencing emotions. Emotions are regulated when deciding whether to
+take a challenging course, when experiencing a conflict between
+one’s desire to go out with friends or study for a test, or when having to work hard on a task which one does not enjoy.
+How can we predict school success? The present paper showed
+independent power of two distinct sets of self-regulation predictors – a typical performance self-regulation trait (Conscientiousness) and maximal performance emotion problem-solving ability
+(ERA). Self-regulation traits address the typical style of behavior
+(tendency to work hard, be reliable, thorough and persistent),
+while ERA involves the maximal capacity to influence one’s emotional reactions in order to reach a goal. The results did not support
+incremental validity of Grit, a lower-level self-regulation trait, in
+predicting school success beyond Conscientiousness. Finally, the
+results also have practical implications for what programs, curricula and interventions get developed to aid educators to enable students to achieve the most. Instead of focusing on lower-level traits,
+such as Grit, educational programs should aim to develop a broad
+set of Conscientiousness-related behaviors, as well as a rich repertoire of emotion-regulation strategies to address challenging
+school experiences.
+Acknowledgements
+Research presented in this paper was supported by the grant to
+the authors from the Brewster Academy, Wolfeboro, NH.
+The authors gratefully acknowledge the contributions of Jessica
+Hoffmann, Marina Ebert, and Nicole Elbertson who commented on
+earlier drafts of the paper.
+References
+Ackerman, P. L., & Kanfer, R. (2004). Cognitive, affective, and conative aspects of
+adult intellect within a typical and maximal performance framework. In D. Y.
+Dai & R. J. Sternberg (Eds.), Motivation, emotion, and cognition: Integrative
+perspectives on intellectual functioning and development (pp. 119–141). Mahwah,
+NJ: Routledge.
+Ameriks, J., Wranik, T., & Salovey, P. (2009). Emotional intelligence, personality,
+impulsivity, and investor behavior. CFA Institute Research Foundation
+Publications.
+Brackett, M. A., & Mayer, J. D. (2003). Convergent, discriminant, and incremental
+validity of competing measures of emotional intelligence. Personality and Social
+Psychology Bulletin, 29, 1147–1158. http://dx.doi.org/10.1177/0146167203254596.
+Brackett, M. A., Rivers, S. E., & Salovey, P. (2011). Emotional intelligence:
+Implications for personal, social, academic, and workplace success. Social and
+Personality Psychology Compass, 5, 88–103. http://dx.doi.org/10.1111/j.1751-
+9004.2010.00334.x.
+Bratko, D., Chamorro-Premuzic, T., & Saks, Z. (2006). Personality and school
+performance: Incremental validity of self-and peer-ratings over intelligence.
+Personality and Individual Differences, 41, 131–142. http://dx.doi.org/10.1016/
+j.paid.2005.12.015.
+Chamorro-Premuzic, T., & Furnham, A. (2003). Personality predicts academic
+performance: Evidence from two longitudinal university samples. Journal of
+Research in Personality, 37, 319–338. http://dx.doi.org/10.1016/S0092-
+6566(02)00578-0.
+Chapman, B. P., Fiscella, K., Kawachi, I., & Duberstein, P. R. (2010). Personality,
+socioeconomic status, and all-cause mortality in the United States. American
+Journal of Epidemiology, 171, 83–92. http://dx.doi.org/10.1093/aje/kwp323.
+Davis, V. (2014, January 9). True grit: The best measure of success and how to teach
+it. Edutopia. Retrieved from http://www.edutopia.org/blog/true-grit-measureteach-success-vicki-davis.
+Day, A. L., & Carroll, S. A. (2004). Using an ability-based measure of emotional
+intelligence to predict individual performance, group performance, and group
+citizenship behaviours. Personality and Individual Differences, 36, 1443–1458.
+http://dx.doi.org/10.1016/S0191-8869(03)00240-X.
+Denham, S. A., Zinsser, K. M., & Brown, C. A. (2012). The emotional basis of learning
+and development in early childhood education. In B. Spodek & O. Saracho (Eds.),
+Handbook of research on the education of young children (3nd Ed., pp. 67–88).
+New York, NY: Lawrence Erlbaum.
+Duckworth, A. L., Peterson, C., Matthews, M. D., & Kelly, D. R. (2007). Grit:
+Perseverance and passion for long-term goals. Journal of Personality and Social
+Psychology, 92, 1087–1101. http://dx.doi.org/10.1037/0022-3514.92.6.1087.
+Duckworth, A. L., & Quinn, P. D. (2009). Development and validation of the Short
+Grit Scale (GRIT–S). Journal of Personality Assessment, 91, 166–174. http://
+dx.doi.org/10.1080/00223890802634290.
+Dunn, E. W., Brackett, M. A., Ashton-James, C., Schneiderman, E., & Salovey, P.
+(2007). On emotionally intelligent time travel: Individual differences in
+affective forecasting ability. Personality and Social Psychology Bulletin, 33,
+85–93. http://dx.doi.org/10.1177/0146167206294201.
+Goff, M., & Ackerman, P. L. (1992). Personality-intelligence relations: Assessment of
+typical intellectual engagement. Journal of Educational Psychology, 84, 537–552.
+http://dx.doi.org/10.1037/0022-0663.84.4.537.
+Graziano, P. A., Reavis, R. D., Keane, S. P., & Calkins, S. D. (2007). The role of emotion
+regulation in children’s early academic success. Journal of School Psychology, 45,
+3–19. http://dx.doi.org/10.1016/j.jsp.2006.09.002.
+Gross, J. J. (1998). The emerging field of emotion regulation: An integrative review.
+Review of General Psychology, 2, 271–299. http://dx.doi.org/10.1037/1089-
+2680.2.3.271.
+Gross, J. J., & John, O. P. (2003). Individual differences in two emotion regulation
+processes: Implications for affect, relationships, and well-being. Journal of
+Personality and Social Psychology, 85, 348–362. http://dx.doi.org/10.1037/0022-
+3514.85.2.348.
+Hough, L. M., & Ones, D. S. (2001). The structure, measurement, validity, and use of
+personality variables in industrial, work, and organizational psychology. In N.
+Anderson, D. S. Ones, H. K. Sinangil, & C. Viswesvaran (Eds.). Handbook of
+industrial, work, and organizational psychology (Vol. 1, pp. 233–277). London: Sage.
+Howse, R. B., Calkins, S. D., Anastopoulos, A. D., Keane, S. P., & Shelton, T. L. (2003).
+Regulatory contributors to children’s kindergarten achievement. Early Education
+and Development, 14, 101–120. http://dx.doi.org/10.1207/s15566935eed1401_7.
+Huebner, ES. (2001). Multidimentional Student Satisfaction Scale. University of
+South Carolina.
+John, O. P., Naumann, L. P., & Soto, C. J. (2008). Paradigm shift to the integrative Big
+Five trait taxonomy: History, measurement, and conceptual issues. In O. P. John,
+R. W. Robins, & L. A. Pervin (Eds.), Handbook of personality: Theory and research
+(3rd ed., pp. 114–158). New York, NY: Guilford Press.
+Laidra, K., Pullmann, H., & Allik, J. (2007). Personality and intelligence as predictors
+of academic achievement: A cross-sectional study from elementary to
+secondary school. Personality and Individual Differences, 42, 441–451. http://
+dx.doi.org/10.1016/j.paid.2006.08.001.
+Libbrecht, N., Lievens, F., Carette, B., & Côté, S. (2013). Emotional intelligence
+predicts success in medical school. Emotion, 14, 64–73. http://dx.doi.org/
+10.1037/a0034392.
+Lopes, P. N., Brackett, M. A., Nezlek, J., Schütz, A., Sellin, I., & Salovey, P. (2004).
+Emotional intelligence and social interaction. Personality and Social Psychology
+Bulletin, 30, 1018–1034. http://dx.doi.org/10.1177/0146167204264762.
+Lopes, P., Grewal, D., Kadis, J., Gall, M., & Salovey, P. (2006). Evidence that emotional
+intelligence is related to job performance and affect and attitudes at work.
+Psicothema, 18, 132–138.
+Lopes, P. N., Salovey, P., Côté, S., & Beers, M. (2005). Emotion regulation abilities and
+the quality of social interaction. Emotion, 5, 113–118. http://dx.doi.org/10.1037/
+1528-3542.5.1.113.
+Lopes, P. N., Salovey, P., & Straus, R. (2003). Emotional intelligence, personality, and
+the perceived quality of social relationships. Personality and Individual
+Differences, 35, 641–658. http://dx.doi.org/10.1016/S0191-8869(02)00242-8.
+MacCann, C., Duckworth, A. L., & Roberts, R. D. (2009). Empirical identification of the
+major facets of conscientiousness. Learning and Individual Differences, 19,
+451–458. http://dx.doi.org/10.1016/j.lindif.2009.03.007.
+MacCann, C., Fogarty, G. J., Zeidner, M., & Roberts, R. D. (2011). Coping mediates the
+relationship between emotional intelligence (EI) and academic achievement.
+Contemporary Educational Psychology, 36, 60–70. http://dx.doi.org/10.1016/
+j.cedpsych.2010.11.002.
+Mayer, J. D., Roberts, R. D., & Barsade, S. G. (2008). Human abilities: Emotional
+intelligence. Annual Review of Psychology, 59, 507–536. http://dx.doi.org/
+10.1146/annurev.psych.59.103006.093646.
+Mayer, J. D., Salovey, P., & Caruso, D. R. (2004). Mayer-Salovey-Caruso Emotional
+Intelligence Test: Youth version (MSCEIT: YV): Item booklet. Toronto, Ontario,
+Canada: Multi-Health Systems.
+Mayer, J. D., & Salovey, P. (1997). What is emotional intelligence? In P. Salovey & D.
+Sluyter (Eds.), Emotional development and emotional intelligence: Educational
+implications (pp. 3–31). New York: Basic Books.
