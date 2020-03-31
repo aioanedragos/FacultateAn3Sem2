@@ -13,7 +13,7 @@ print(urls[0])
 
 # 6. echipe sau nu
 # echipe = re.findall('^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\\n$',ceva)
-regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
 
 matches = re.finditer(regex, ceva, re.MULTILINE)
 sinonime = ['cluster', 'grouping', 'gang', 'category', 'band', 'pack', 'bunch', 'clump', 'class', 'set', 'aggregation', 'panel', 'collection', 'formation', 'party', 'pair', 'husband and wife', 'twosome', 'two', 'match', 'squad', 'crew', 'gang', 'group', 'side']
@@ -34,7 +34,7 @@ else:
 
 # 7numar participanti
  
-regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
 matches = re.finditer(regex, ceva, re.MULTILINE)
 
 ceva1 = []  
@@ -76,7 +76,7 @@ result = ceva1[0].split()
 
 print(result[len(result) - 1])
 # 10 studii
-regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
 
 matches = re.finditer(regex, ceva, re.MULTILINE)
 sinonime = ['high school', 'University']
@@ -100,7 +100,7 @@ else:
     print("Mixted")
 
 # 11male sau female
-regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
 
 matches = re.finditer(regex, ceva, re.MULTILINE)
 gender = ['male','female']
@@ -122,7 +122,7 @@ else:
     print("Mixted")
 
 # 12 nationalitate
-regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
 
 matches = re.finditer(regex, ceva, re.MULTILINE)
 sinonime = ['Asian', 'Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Anguillan', 'Citizen of Antigua and Barbuda', 'Argentine', 'Armenian', 'Australian', 'Austrian', 'Azerbaijani']
