@@ -75,6 +75,29 @@ for matchNum, match in enumerate(matches, start=1):
 result = ceva1[0].split()
 
 print(result[len(result) - 1])
+# 10 studii
+regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+
+matches = re.finditer(regex, ceva, re.MULTILINE)
+sinonime = ['high school', 'University']
+
+
+ceva1 = []
+for matchNum, match in enumerate(matches, start=1):
+    ceva1.append(match.group())
+nr = 0
+education = "" 
+for i in sinonime:
+    if ceva1[0].find(i) > 0:
+        nr += 1
+        education = i
+
+if nr == 0:
+    print("Not specified")
+elif nr == 1:
+    print(education)
+else:
+    print("Mixted")
 
 # 11male sau female
 regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
