@@ -97,3 +97,27 @@ elif female > 0 and (male == 0 or male < 0):
     print("female")
 else: 
     print("Mixted")
+
+# 12 nationalitate
+regex = r"^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+
+matches = re.finditer(regex, ceva, re.MULTILINE)
+sinonime = ['Asian', 'Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Anguillan', 'Citizen of Antigua and Barbuda', 'Argentine', 'Armenian', 'Australian', 'Austrian', 'Azerbaijani']
+
+
+ceva1 = []
+for matchNum, match in enumerate(matches, start=1):
+    ceva1.append(match.group())
+nr = 0
+nationality = "" 
+for i in sinonime:
+    if ceva1[0].find(i) > 0:
+        nr += 1
+        nationality = i
+
+if nr == 0:
+    print("Not specified")
+elif nr == 1:
+    print(nationality)
+else:
+    print("Mixted")
