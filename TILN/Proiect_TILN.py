@@ -1,7 +1,7 @@
 import re
 
 # 3.email gasit
-f = open("Text.txt","r")
+f = open("Text.txt","r",encoding='utf-8')
 ceva = f.read()
 
 email = re.findall('\S+@\S+', ceva)
@@ -13,9 +13,10 @@ print(urls[0])
 
 # 6. echipe sau nu
 # echipe = re.findall('^[0-9].[0-9]. [(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\\n$',ceva)
-regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+# regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"[0-9]\.[0-9]\.[ ]*(Participants and procedure|Participants)(.*?)[0-9]\.[0-9]\."
 
-matches = re.finditer(regex, ceva, re.MULTILINE)
+matches = re.finditer(regex, ceva, re.DOTALL)
 sinonime = ['cluster', 'grouping', 'gang', 'category', 'band', 'pack', 'bunch', 'clump', 'class', 'set', 'aggregation', 'panel', 'collection', 'formation', 'party', 'pair', 'husband and wife', 'twosome', 'two', 'match', 'squad', 'crew', 'gang', 'group', 'side']
 
 
@@ -23,6 +24,7 @@ ceva1 = []
 for matchNum, match in enumerate(matches, start=1):
     ceva1.append(match.group())
 nr = 0   
+# print(ceva1)
 for i in sinonime:
     if ceva1[0].find(i) > 0:
         nr+= ceva1[0].find(i)
@@ -34,13 +36,12 @@ else:
 
 # 7numar participanti
  
-regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
-matches = re.finditer(regex, ceva, re.MULTILINE)
+regex = r"[0-9]\.[0-9]\.[ ]*(Participants and procedure|Participants)(.*?)[0-9]\.[0-9]\."
+matches = re.finditer(regex, ceva, re.DOTALL)
 
 ceva1 = []  
 for matchNum, match in enumerate(matches, start=1):
     ceva1.append(match.group())
-
 
 result = [int(s) for s in ceva1[0].split() if s.isdigit()]
 print(result[0])
@@ -48,7 +49,7 @@ print(result[0])
 # 8Media varstei
 
 # re = '/((median)|(mean)) [a-zA-Z ]*=?[ 0-9]+[.0-9]*/m';
-regex = r"((median)|(mean)) [a-zA-Z ]*=?[ 0-9]+[.0-9]*"
+regex = r"((median)|(mean))[ ]*[a-zA-Z ]*=?[ 0-9]+[.0-9]*"
 
 matches = re.finditer(regex, ceva, re.MULTILINE)
 
@@ -76,9 +77,10 @@ result = ceva1[0].split()
 
 print(result[len(result) - 1])
 # 10 studii
-regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+# regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"[0-9]\.[0-9]\.[ ]*(Participants and procedure|Participants)(.*?)[0-9]\.[0-9]\."
 
-matches = re.finditer(regex, ceva, re.MULTILINE)
+matches = re.finditer(regex, ceva, re.DOTALL)
 sinonime = ['high school', 'University']
 
 
@@ -100,9 +102,10 @@ else:
     print("Mixted")
 
 # 11male sau female
-regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+# regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"[0-9]\.[0-9]\.[ ]*(Participants and procedure|Participants)(.*?)[0-9]\.[0-9]\."
 
-matches = re.finditer(regex, ceva, re.MULTILINE)
+matches = re.finditer(regex, ceva, re.DOTALL)
 gender = ['male','female']
 
 
@@ -122,9 +125,11 @@ else:
     print("Mixted")
 
 # 12 nationalitate
-regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+# regex = r"^[0-9].[0-9].[ ]*[(Participants and procedure)|(Participants)]*[\n]*[\w =\n()!@#$%^&*()-_=]+\n$"
+regex = r"[0-9]\.[0-9]\.[ ]*(Participants and procedure|Participants)(.*?)[0-9]\.[0-9]\."
 
-matches = re.finditer(regex, ceva, re.MULTILINE)
+
+matches = re.finditer(regex, ceva, re.DOTALL)
 sinonime = ['Asian', 'Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Anguillan', 'Citizen of Antigua and Barbuda', 'Argentine', 'Armenian', 'Australian', 'Austrian', 'Azerbaijani']
 
 
