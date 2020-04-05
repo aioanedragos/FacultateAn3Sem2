@@ -1,3 +1,9 @@
+from random import randrange
+
+
+
+
+
 def extended_euclidean(a, b): 
 	if a == 0: 
 		return (b, 0, 1) 
@@ -56,40 +62,70 @@ def crt(m, x):
 	# returns the remainder of the final equation 
 	return x[0] 
 
+def CMMDC(a,b):
+	print(a)
+	while (a!=b):
+		if a>b:
+			a-=b             #a=a-b
+		else:
+			b-=a;            #b=b-a
+	return a;
+
+
 
 def tema3_punctul_a():
-    p = 3
-    q = 5
-    r = 7
-    n = 105
-    e = 5
-    d = 29
-    x = 86
+	p = 3
+	q = 5
+	r = 7
+	n = p * q * r
 
-    m = []
-    m.append(p)
-    m.append(q)
-    m.append(r)
+	phi = (p-1)*(q-1)*(r-1)
+	ok = 0
+	while ok != 1:
+		e = randrange(phi + 1)	
+		if CMMDC(e,phi) == 1:
+			ok = 1
 
-    y = (x**e) % n
-    print("Y initial este : ", y)
-    # y = (y**d) % n
-    # print("dec(y) este : ", y)
-    
-    x_p = (y % p) ** (d % (p - 1)) % p
-    print("x_p este : ", x_p)
+			
+	ok = 0
+	d = 2
+	while ok != 1:
+		if ((d * e) % phi) == 1:
+			ok = 1
+		else:
+			d += 1
 
-    x_q = (y % q) ** (d % (q - 1)) % q
-    print("x_q este : ", x_q)
 
-    x_r = (y % r) ** (d % (r - 1)) % r
-    print("x_r este : ", x_r)
 
-    x1 = []
-    x1.append(x_p)
-    x1.append(x_q)
-    x1.append(x_r)
 
-    return crt(m,x1)
+	# d = 29
+	x = randrange(n)
+
+	print("Textul initial este ",x)
+	m = []
+	m.append(p)
+	m.append(q)
+	m.append(r)
+
+	y = (x**e) % n
+	print("Y initial este : ", y)
+	# y = (y**d) % n
+	# print("dec(y) este : ", y)
+
+	x_p = (y % p) ** (d % (p - 1)) % p
+	print("x_p este : ", x_p)
+
+	x_q = (y % q) ** (d % (q - 1)) % q
+	print("x_q este : ", x_q)
+
+	x_r = (y % r) ** (d % (r - 1)) % r
+	print("x_r este : ", x_r)
+
+	x1 = []
+	x1.append(x_p)
+	x1.append(x_q)
+	x1.append(x_r)
+
+	return crt(m,x1)
 
 print(tema3_punctul_a())
