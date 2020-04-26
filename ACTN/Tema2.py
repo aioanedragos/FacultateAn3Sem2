@@ -1,5 +1,5 @@
 from random import randrange
-
+import time
 
 
 
@@ -63,7 +63,7 @@ def crt(m, x):
 	return x[0] 
 
 def CMMDC(a,b):
-	print(a)
+	# print(a)
 	while (a!=b):
 		if a>b:
 			a-=b             #a=a-b
@@ -74,57 +74,69 @@ def CMMDC(a,b):
 
 
 def tema3_punctul_a():
-	p = 3
-	q = 5
-	r = 7
+	p = 9606386123153647926437742548933834377929149420413686918158038681437670302090540073919586518905723118116980828458094443382291005132381230905605808294351467
+	q = 8071308789846342920274707015169510583872950277691392718850127160021566973859686760318020205339748103078430771656318717139469328739625256587763860685874641
+	r = 13259779448504389165767718845180578873683756224815774708967210497817786643543236250984505739412990753880909070599993628062650711994364496621489086326431339
 	n = p * q * r
-
+	print("n = ", n)
+	start_time4 = time.time()
 	phi = (p-1)*(q-1)*(r-1)
+	print("phi = ", phi)
 	ok = 0
 	while ok != 1:
 		e = randrange(phi + 1)	
 		if CMMDC(e,phi) == 1:
 			ok = 1
 
-			
+	print("e = ", e)	
 	ok = 0
 	d = 2
-	while ok != 1:
-		if ((d * e) % phi) == 1:
-			ok = 1
-		else:
-			d += 1
+	# time.sleep(5)
+	# while ok != 1:
+	# 	print(d)
+	# 	if ((d * e) % phi) == 1:
+	# 		ok = 1
+	# 	else:
+	# 		d = d + 1
 
+	d = modinv(e, phi)
 
-
+	print("d = ", d)
 
 	# d = 29
 	x = randrange(n)
-
+	
 	print("Textul initial este ",x)
 	m = []
 	m.append(p)
 	m.append(q)
 	m.append(r)
 
-	y = (x**e) % n
+	# y = (x**e) % n
+	y = pow(x,e,n)
 	print("Y initial este : ", y)
 	# y = (y**d) % n
 	# print("dec(y) este : ", y)
 
-	x_p = (y % p) ** (d % (p - 1)) % p
+	# x_p = (y % p) ** (d % (p - 1)) % p
+	x_p = pow(y % p,d % (p - 1), p)
 	print("x_p este : ", x_p)
 
-	x_q = (y % q) ** (d % (q - 1)) % q
+	# x_q = (y % q) ** (d % (q - 1)) % q
+	x_q = pow(y % q,d % (q - 1), q)
 	print("x_q este : ", x_q)
 
-	x_r = (y % r) ** (d % (r - 1)) % r
+	# x_r = (y % r) ** (d % (r - 1)) % r
+	x_r = pow(y % r,d % (r - 1), r)
 	print("x_r este : ", x_r)
 
 	x1 = []
 	x1.append(x_p)
 	x1.append(x_q)
 	x1.append(x_r)
+
+	# print("--- %s seconds ---" % (time.time() - start_time4))
+	# time4 = time.time() - start_time4
 
 	return crt(m,x1)
 
