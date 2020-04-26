@@ -57,8 +57,8 @@ def modinv(a, m):
 
 
 
-p = 3
-q = 5
+p = 9606386123153647926437742548933834377929149420413686918158038681437670302090540073919586518905723118116980828458094443382291005132381230905605808294351467
+q = 8071308789846342920274707015169510583872950277691392718850127160021566973859686760318020205339748103078430771656318717139469328739625256587763860685874641
 print("p = ",p)
 print("q = ",q)
 p2 = p*p
@@ -82,7 +82,8 @@ print("e = ",e)
 print("d = ",d)
 x = random.randrange(n)
 print("*******************************Numarul dat = ",x)
-y = (x ** e) % n
+# y = (x ** e) % n
+y = pow(x, e, n)
 print("Codificare numar(x) = ", y)
 ######################################### Cu librarie
 start_time3 = time.time()
@@ -91,11 +92,15 @@ print("Rezultatul cu libraria = ", rez_lib)
 print("--- %s seconds ---" % (time.time() - start_time3))
 time3 = time.time() - start_time3
 #######################################################
-y_q = ((y % q) ** (d % (q-1))) % q
-y_0 = ((y % p) ** (d % (p-1))) % p
+# y_q = ((y % q) ** (d % (q-1))) % q
+y_q = pow(y % q,d % (q - 1), q)
+# y_0 = ((y % p) ** (d % (p-1))) % p
+y_0 = pow(y % p,d % (p - 1), p)
 yp2 = y % p2
-E = (yp2 - ((y_0 ** e) % p2)) % p2
-toInverse = (((y_0 **(e-1)) % p) * e) % p
+# E = (yp2 - ((y_0 ** e) % p2)) % p2
+E = (yp2 - pow(y_0,e,p2)) % p2
+# toInverse = (((y_0 **(e-1)) % p) * e) % p
+toInverse = (pow(y_0, e - 1, p) * e) % p
 y_1 = (E // p * (modinv(toInverse,p))) % p
 y_1_2 = y_0 + (y_1 * p)
 print("y_q = ", y_q)

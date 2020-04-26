@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using MathNet.Numerics;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Double;
 
@@ -327,7 +319,7 @@ namespace Tema1
 
             var C_check = A_check.Multiply(B_check);
 
-            ex3_res.Text += "\n";
+            ex3_res.Text += "\n";   
             matrixA.Text = "Matricea A:\n";
             matrixB.Text = "Matricea B:\n";
 

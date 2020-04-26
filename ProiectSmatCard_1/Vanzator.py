@@ -13,6 +13,7 @@ from Crypto.Cipher import PKCS1_OAEP
 import ast
 import socket
 from hashlib import sha512
+import time
 
 BS = 16
 def pad(s):
@@ -42,8 +43,8 @@ class AESCipher:
 
 
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 1234         # The port used by the server
+HOST = '127.0.0.1'  
+PORT = 1234         
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 soc.bind((HOST, PORT))
@@ -102,7 +103,7 @@ print("Semnatura Sesiunii esuata:", hash != hashFromSignature)
 #Criptarea asimetrica pentru SessionID si semnatura acesteia
 
 sha=hashlib.sha256()
-sha.update(b"cheiameasimaisecreta")
+sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())
 aes_key=sha.digest()
 aes_cipher = AESCipher(aes_key)
 
@@ -192,8 +193,8 @@ aux_json_hash_signed_encryped=aes_cipher_for_paymentgateway.encrypt(str(aux_json
 
 
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 1235         # The port used by the server
+HOST = '127.0.0.1'  
+PORT = 1235         
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 soc.connect((HOST, PORT))
@@ -227,6 +228,8 @@ aes_cipher_paymentgateway = AESCipher(aes_key_paymentgateway)
 aux_json=aes_cipher_paymentgateway.decrypt(aux_json_encrypted)
 
 aux_json_encrypted=aes_chiper_customer.encrypt(str(aux_json))
+
+time.sleep(10)
 
 conn.send(str(len(aux_json_encrypted)).encode())
 conn.send(aux_json_encrypted)

@@ -55,7 +55,7 @@ with open('PubKM', 'rb') as f:
         
 #Aes key==============
 sha=hashlib.sha256()
-sha.update(b"cheiameasecreta")
+sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())
 aes_key=sha.digest()
 aes_cipher = AESCipher(aes_key)
 # print(aes_key)
@@ -72,8 +72,8 @@ aes_key_encryped=public_key_merchant.encrypt(aes_key)
 public_key_encrypted=aes_cipher.encrypt(str(public_key))
 #=========================================================================================================
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 1234         # The port used by the server
+HOST = '127.0.0.1'  
+PORT = 1234         
 
 connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 connection.connect((HOST, PORT))
@@ -115,7 +115,7 @@ SessionID_signed_merchant = aes_cipher_merchant.decrypt(SessionID_signed_merchan
 PI=dict()
 PI["CardN"]="1111222233334444"
 PI["CardExp"]="10/20"
-PI["CCode"]="123"
+PI["CCode"]="1234"
 PI["Sid"]=int(SessionID)
 PI["Amount"]=100
 PI["PubKC"]=str(public_key)

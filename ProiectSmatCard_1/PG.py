@@ -43,8 +43,8 @@ class AESCipher:
 
 
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 1235         # The port used by the server
+HOST = '127.0.0.1'  
+PORT = 1235         
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 soc.bind((HOST, PORT))
@@ -169,7 +169,7 @@ aux_json=json.dumps(aux)
 
 
 sha=hashlib.sha256()
-sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())#adding salt
+sha.update((str)(Random.random.randint(100000000000,9999999999999)).encode())
 aes_key=sha.digest()
 aes_cipher = AESCipher(aes_key)
 
