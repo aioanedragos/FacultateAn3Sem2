@@ -97,7 +97,45 @@ def metoda_puterii(A):
 
         
 # A = np.array([[2,1],[4,2]])
-metoda_puterii(A)
+# metoda_puterii(A)
 
+
+u, s, vh = np.linalg.svd(A, full_matrices=True)
+print("u este :", u)
+print("s este :", s)
+print("v este :", vh)
+nr = 0
+for i in s:
+    if i > 0:
+        nr += 1
+print("Rangul matricei A este :",nr)
+
+maxim = 0
+minim = 999999999999
+for i in s:
+    if i > maxim:
+        maxim = i
+    if i < minim and i > 0:
+        minim = i
+
+print("Numarul de conditionare al matricei A este :", maxim/minim)
+
+result = vh.dot(s)
+result = result.dot(np.transpose(u))
+nr = 0
+for i in s:
+    nr += 1
+
+
+count = 0
+s_copy = []
+while count != nr:
+    vector = [0] * nr
+    vector[count] = s[count]
+    s_copy.append(vector)
+    count += 1
+s = np.array(s_copy)
+print(s)
+# print("pseudoinversa Moore-Penrose a matricei A este :", result)
 
 
