@@ -1,0 +1,8 @@
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\bin\Debug\netstandard2.0\Licenta.deps.json
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\bin\Debug\netstandard2.0\Licenta.dll
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Licenta.csprojAssemblyReference.cache
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\RegistrationPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Licenta.AssemblyInfoInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Licenta.AssemblyInfo.cs
