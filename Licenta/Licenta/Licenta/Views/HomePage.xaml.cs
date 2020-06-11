@@ -41,5 +41,10 @@ namespace Licenta.Views
         {
             await Navigation.PushAsync(new NavigationPage(new DeleteChildren()));
         }
+
+        private async void Button_Clicked_5(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new UpdateChildren()));
+        }
     }
 }

@@ -6,8 +6,8 @@ namespace Licenta.Tables
     public class Children
     {
         [PrimaryKey, AutoIncrement]
-        public int UserId { get; set; }
-
+        public Guid UserId { get; set; }
+        
         public string ChildrenName { get; set; }
 
         public int Age { get; set; }

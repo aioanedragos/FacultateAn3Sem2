@@ -27,7 +27,6 @@ namespace Licenta.Views
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Children children = new Children();
-            listView.ItemsSource = await App.Database.DeletePersonAsync(children.UserId);
         }
     }
 }

@@ -18,3 +18,4 @@ D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\AddChildren.xaml.g.cs
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\GetAllChildren.xaml.g.cs
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\DeleteChildren.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\UpdateChildren.xaml.g.cs
