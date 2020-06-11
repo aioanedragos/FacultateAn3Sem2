@@ -25,6 +25,8 @@
 						<StackLayout Padding="0" Margin="15,10">
 
 							<Button Text="Add Child" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" Clicked="Button_Clicked"/>
+							<Button Text="Get Children" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" Clicked="Button_Clicked_3"/>
+							<Button Text="Delete Child" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" Clicked="Button_Clicked_4"/>
 
 						</StackLayout>
 

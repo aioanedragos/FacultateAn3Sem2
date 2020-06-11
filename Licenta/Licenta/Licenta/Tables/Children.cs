@@ -3,7 +3,7 @@ using System;
 
 namespace Licenta.Tables
 {
-    class Children
+    public class Children
     {
         [PrimaryKey, AutoIncrement]
         public Guid UserId { get; set; }
