@@ -1,0 +1,11 @@
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\LicentaFinal.csprojAssemblyReference.cache
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\MainPAge.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\MainPage1.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\Views\RegisterPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\LicentaFinal.AssemblyInfoInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\LicentaFinal.AssemblyInfo.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\LicentaFinal.csproj.CoreCompileInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\LicentaFinal.dll
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\ref\LicentaFinal.dll
+D:\Facultate Git\FacultateAn3Sem2\LicentaFinal\LicentaFinal\obj\Debug\netstandard2.0\LicentaFinal.pdb

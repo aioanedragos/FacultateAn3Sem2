@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LicentaPasCuPas.Views.RegisterPage">
+
+	<StackLayout BackgroundColor="#e6e6e6">
+		<Grid>
+			<StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+				<Frame HeightRequest="150" BackgroundColor="HotPink" Padding="0" Margin="0">
+					<Image Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg" Aspect="AspectFill" Margin="0"/>
+				</Frame>
+			</StackLayout>
+			<StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+				<Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+					<StackLayout>
+
+
+						<StackLayout Margin="10">
+							<Label Text="Register" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+						</StackLayout>
+
+						<StackLayout Padding="0" Margin="15,10">
+
+							<Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+								<StackLayout Orientation="Horizontal">
+									<Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+										<Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+									</Frame>
+
+									<Entry x:Name="email" Placeholder="Email" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+								</StackLayout>
+							</Frame>
+
+							<Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+								<StackLayout Orientation="Horizontal">
+									<Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+										<Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+									</Frame>
+
+									<Entry x:Name="password" Placeholder="Password" IsPassword="True" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+								</StackLayout>
+							</Frame>
+
+							<Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+								<StackLayout Orientation="Horizontal">
+									<Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+										<Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+									</Frame>
+
+									<Entry x:Name="confirmpassword" Placeholder="ConfirmPassword" IsPassword="True" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+								</StackLayout>
+							</Frame>
+
+							<ListView x:Name="listView">
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<TextCell Text="{Binding Email}"
+                              Detail="{Binding Password}" />
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							</ListView>
+
+
+							<StackLayout  Orientation="Horizontal">
+								<CheckBox IsChecked="False" Color="HotPink" />
+								<Label Text="Remember me" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+								<Label Text="Forgot Password" TextColor="HotPink" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+
+							</StackLayout>
+
+							<Button Text="Register" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" Clicked="Button_Clicked" />
+
+						</StackLayout>
+
+
+					</StackLayout>
+
+				</Frame>
+			</StackLayout>
+		</Grid>
+	</StackLayout>
+</ContentPage>

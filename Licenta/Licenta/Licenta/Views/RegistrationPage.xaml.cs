@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Licenta.Tables;
+using SQLite;
+using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,9 +15,27 @@ namespace Licenta.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        public void Button_Clicked(object sender, EventArgs e)
         {
+            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RegisterUserTable.db");
+            var db = new SQLiteConnection(dbpath);
+            db.CreateTable<RegisterUserTable>();
 
+            var item = new RegisterUserTable()
+            {
+                UserName = EntryUserName.Text,
+                Password = EntryUserPassword.Text,
+                Email = EntryUserEmail.Text,
+                PhoneNumber = EntryUserPhoneNumber.Text
+            };
+            db.Insert(item);
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var result = await this.DisplayAlert("Felicitari", "Cont Creat", "Da", "Nu");
+
+                if (result)
+                    await Navigation.PushAsync(new LoginPAge());
+            });
         }
     }
 }

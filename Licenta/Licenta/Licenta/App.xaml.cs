@@ -9,7 +9,7 @@ namespace Licenta
         {
             InitializeComponent();
 
-            MainPage = new RegistrationPage();
+            MainPage = new NavigationPage(new LoginPAge());
         }
 
         protected override void OnStart()

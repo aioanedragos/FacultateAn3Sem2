@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="UltimaLiceta.MainPage">
+
+
+	<StackLayout Orientation="Vertical" Spacing="10">
+		<Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="Black"/>
+		<Entry x:Name="Password" Text="{Binding Password}" Placeholder="Senha"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="Black"/>
+
+		<Button Text="Sign In"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
+		<Button Text="Sign Up"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                 />
+	</StackLayout>
+
+</ContentPage>

@@ -1,0 +1,14 @@
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\UltimaLiceta.csprojAssemblyReference.cache
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\UltimaLiceta.AssemblyInfoInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\UltimaLiceta.AssemblyInfo.cs
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\UltimaLiceta.csproj.CoreCompileInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\UltimaLiceta.dll
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\ref\UltimaLiceta.dll
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\UltimaLiceta.pdb
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\bin\Debug\netstandard2.0\UltimaLiceta.deps.json
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\bin\Debug\netstandard2.0\UltimaLiceta.dll
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\bin\Debug\netstandard2.0\ref\UltimaLiceta.dll
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\bin\Debug\netstandard2.0\UltimaLiceta.pdb
+D:\Facultate Git\FacultateAn3Sem2\UltimaLiceta\UltimaLiceta\obj\Debug\netstandard2.0\XamlC.stamp

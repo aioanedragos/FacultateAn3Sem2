@@ -1,0 +1,15 @@
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\LicentaPasCuPas.csprojAssemblyReference.cache
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\LicentaPasCuPas.AssemblyInfoInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\LicentaPasCuPas.AssemblyInfo.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\bin\Debug\netstandard2.0\LicentaPasCuPas.deps.json
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\bin\Debug\netstandard2.0\LicentaPasCuPas.dll
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\bin\Debug\netstandard2.0\ref\LicentaPasCuPas.dll
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\bin\Debug\netstandard2.0\LicentaPasCuPas.pdb
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\LicentaPasCuPas.dll
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\ref\LicentaPasCuPas.dll
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\LicentaPasCuPas.pdb
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\Views\RegisterPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\LicentaPasCuPas.csproj.CoreCompileInputs.cache
+D:\Facultate Git\FacultateAn3Sem2\LicentaPasCuPas\LicentaPasCuPas\obj\Debug\netstandard2.0\XamlC.stamp
