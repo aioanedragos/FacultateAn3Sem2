@@ -5,7 +5,54 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Licenta.Views.HomePage">
-    <ContentPage.Content>
-		<Button Text="Logout" Clicked="Button_Clicked_1" BackgroundColor="Blue"/>
-	</ContentPage.Content>
+	<StackLayout BackgroundColor="#e6e6e6">
+		<Grid>
+			<StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+				<Frame HeightRequest="150" BackgroundColor="HotPink" Padding="0" Margin="0">
+					<Image Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg" Aspect="AspectFill" Margin="0"/>
+				</Frame>
+			</StackLayout>
+			<StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+				<Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+					<StackLayout>
+
+
+						<StackLayout Margin="10">
+							<Label Text="Management Children" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+						</StackLayout>
+
+						<StackLayout Padding="0" Margin="15,10">
+
+							<Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+								<StackLayout Orientation="Horizontal">
+									<Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+										<Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+									</Frame>
+
+									<Entry x:Name="EntryName" Placeholder="Name" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+								</StackLayout>
+							</Frame>
+
+							<Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+								<StackLayout Orientation="Horizontal">
+									<Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+										<Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+									</Frame>
+
+									<Entry x:Name="EntryAge" Placeholder="Age" IsPassword="True" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+								</StackLayout>
+							</Frame>
+
+							<Button Text="Add Child" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" />
+
+						</StackLayout>
+
+
+					</StackLayout>
+
+				</Frame>
+			</StackLayout>
+		</Grid>
+	</StackLayout>
 </ContentPage>
