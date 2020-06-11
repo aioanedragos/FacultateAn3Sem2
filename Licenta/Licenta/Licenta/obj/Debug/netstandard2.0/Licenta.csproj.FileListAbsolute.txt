@@ -15,3 +15,4 @@ D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Licenta.pdb
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\AddChildren.xaml.g.cs

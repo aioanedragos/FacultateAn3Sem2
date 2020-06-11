@@ -10,10 +10,10 @@ namespace Licenta.Tables
 
         public string ChildrenName { get; set; }
 
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         public string LetterRemane { get; set; }
 
-        public int accuracy { get; set; }
+        public int Accuracy { get; set; }
     }
 }
