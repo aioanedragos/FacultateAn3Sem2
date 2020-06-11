@@ -21,6 +21,12 @@ namespace Licenta.Tables
             return _database.Table<Children>().ToListAsync();
         }
 
+        public Task<List<Children>> DeletePersonAsync(int ID)
+        {
+            _database.Table<Children>().DeleteAsync(x => x.UserId == ID);
+            return _database.Table<Children>().ToListAsync();
+        }
+
         public Task<Children> GetPersonAsync()
         {
             var ceva = _database.Table<Children>().OrderBy(x => x.ChildrenName).FirstOrDefaultAsync();

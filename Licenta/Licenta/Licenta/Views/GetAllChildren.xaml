@@ -6,13 +6,18 @@
              mc:Ignorable="d"
              x:Class="Licenta.Views.GetAllChildren">
     <ContentPage.Content>
-
+		
 		<StackLayout>
+			<StackLayout Padding="0" Margin="15,10">
+
+				<Button Text="Show" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" Clicked="Button_Clicked"/>
+
+			</StackLayout>
 			<ListView x:Name="listView">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<TextCell Text="{Binding ChildrenName}"
-                              Detail="{Binding Age}" />
+                              Detail="{Binding UserId}" />
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>

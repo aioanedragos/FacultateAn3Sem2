@@ -22,7 +22,7 @@ namespace Licenta.Views
 
         public async void Button_Clicked(object sender, EventArgs e)
         {
-            
+
             listView.ItemsSource = await App.Database.GetPeopleAsync();
         }
     }
