@@ -18,7 +18,7 @@ namespace Licenta.Views
         public WeatherPage()
         {
             InitializeComponent();
-            GetWeatherInfo();
+            GetCoordinates();
         }
 
         private string Location { get; set; } = "Iasi";
@@ -32,12 +32,29 @@ namespace Licenta.Views
                 var request = new GeolocationRequest(GeolocationAccuracy.Best);
                 var location = await Geolocation.GetLocationAsync(request);
                 if(location != null)
+                {
+                    Latitude = location.Latitude;
+                    Longitude = location.Longitude;
+                    Location = await GetCity(location);
+                    GetWeatherInfo();
+                }
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.StackTrace);
             }
+        }
+
+        private async Task<string> GetCity(Location location)
+        {
+            var places = await Geocoding.GetPlacemarksAsync(location);
+            var currentPlace = places?.FirstOrDefault(); 
+
+            if(currentPlace != null)
+                return $"{currentPlace.Locality},{currentPlace.CountryName}";
+
+            return null;
         }
 
         private async void GetWeatherInfo()
