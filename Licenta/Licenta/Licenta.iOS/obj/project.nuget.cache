@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2WRCAgCWCnNmdsoyDOqBXGRgxgl16aTwGoffs0JI5lAUW5AmGUzmeYaAXeVZwOnoEdAsgMjYy8za+LpXFQu22w==",
+  "dgSpecHash": "K1yAy0resBwWtzmQ027qp3RE8UKWxV9+LzM00ZxfGr6iL0rVLR3NurdVJvdpbUUQlkLo1dgjfWTFAy4j4FJqmA==",
   "success": true,
   "projectFilePath": "D:\\Facultate Git\\FacultateAn3Sem2\\Licenta\\Licenta\\Licenta.iOS\\Licenta.iOS.csproj",
   "expectedPackageFiles": [
@@ -10,10 +10,10 @@
     "C:\\Users\\Dragos\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.3\\sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\Dragos\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+    "C:\\Users\\Dragos\\.nuget\\packages\\xam.plugins.texttospeech\\4.0.0.7\\xam.plugins.texttospeech.4.0.0.7.nupkg.sha512",
+    "C:\\Users\\Dragos\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\Dragos\\.nuget\\packages\\xamarin.forms\\4.6.0.847\\xamarin.forms.4.6.0.847.nupkg.sha512"
   ],
   "logs": []
 }

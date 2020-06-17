@@ -24,7 +24,7 @@
 						<Entry Placeholder="Password" IsPassword="True" FontSize="16" x:Name="EntryUserPassword"/>
 					</StackLayout>
 					<StackLayout Grid.Row="2">
-						<Entry Placeholder="Email" FontSize="16" x:Name="EntryUserEmail"/>
+						<Entry Placeholder="Email" Keyboard="Email" FontSize="16" x:Name="EntryUserEmail"/>
 					</StackLayout>
 					<StackLayout Grid.Row="3">
 						<Entry Placeholder="PhoneNumber" FontSize="16" x:Name="EntryUserPhoneNumber"/>	

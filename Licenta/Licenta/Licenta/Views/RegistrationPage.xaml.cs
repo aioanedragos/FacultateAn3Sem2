@@ -2,6 +2,7 @@
 using SQLite;
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,27 +16,37 @@ namespace Licenta.Views
             InitializeComponent();
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        public async void Button_Clicked(object sender, EventArgs e)
         {
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RegisterUserTable.db");
             var db = new SQLiteConnection(dbpath);
             db.CreateTable<RegisterUserTable>();
 
-            var item = new RegisterUserTable()
-            {
-                UserName = EntryUserName.Text,
-                Password = EntryUserPassword.Text,
-                Email = EntryUserEmail.Text,
-                PhoneNumber = EntryUserPhoneNumber.Text
-            };
-            db.Insert(item);
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                var result = await this.DisplayAlert("Felicitari", "Cont Creat", "Da", "Nu");
+            var emailPattern = "^([\\w\\.\\-]+)@([\\w]+.[\\w]{2,3})$";
 
-                if (result)
-                    await Navigation.PushAsync(new LoginPAge());
-            });
+            if (String.IsNullOrWhiteSpace(EntryUserEmail.Text) && (Regex.IsMatch(EntryUserEmail.Text, emailPattern))) {
+                var item = new RegisterUserTable()
+                {
+                    UserName = EntryUserName.Text,
+                    Password = EntryUserPassword.Text,
+                    Email = EntryUserEmail.Text,
+                    PhoneNumber = EntryUserPhoneNumber.Text
+                };
+                db.Insert(item);
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var result = await this.DisplayAlert("Felicitari", "Cont Creat", "Da", "Nu");
+
+                    if (result)
+                        await Navigation.PushAsync(new LoginPAge());
+                });
+            }
+            else
+            {
+                await DisplayAlert("Alert", "Introduceti un Email valid", "OK");
+            }
+
+            
         }
     }
 }

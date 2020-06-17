@@ -58,7 +58,7 @@
 							<ListView x:Name="listView">
 								<ListView.ItemTemplate>
 									<DataTemplate>
-										<TextCell Text="{Binding Email}"
+											<TextCell Text="{Binding Email}"
                               Detail="{Binding Password}" />
 									</DataTemplate>
 								</ListView.ItemTemplate>

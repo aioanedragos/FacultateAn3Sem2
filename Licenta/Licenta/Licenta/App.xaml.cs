@@ -28,7 +28,7 @@ namespace Licenta
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPAge());
+            MainPage = new NavigationPage(new WeatherPage());
         }
 
         protected override void OnStart()

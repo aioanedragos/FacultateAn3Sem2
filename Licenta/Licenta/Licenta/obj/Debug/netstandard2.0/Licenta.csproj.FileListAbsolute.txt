@@ -19,3 +19,5 @@ D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\GetAllChildren.xaml.g.cs
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\DeleteChildren.xaml.g.cs
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\UpdateChildren.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\AlphabetLearning.xaml.g.cs
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta\obj\Debug\netstandard2.0\Views\WeatherPage.xaml.g.cs

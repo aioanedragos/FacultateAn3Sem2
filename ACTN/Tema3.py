@@ -112,5 +112,5 @@
 
 import macpath
 
-print(pow(13,15,17))
+print(pow(17,38,10))
 # print(pow(16,15,17))

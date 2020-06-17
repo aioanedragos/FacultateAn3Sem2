@@ -32,7 +32,7 @@ namespace Licenta.Views
             {
                 ChildrenName = EntryName.Text,
                 Age = Convert.ToInt32(EntryAge.Text),
-                LetterRemane = "a",
+                LetterRemane = 'a',
                 Accuracy = 0
             };
             db.Insert(children);

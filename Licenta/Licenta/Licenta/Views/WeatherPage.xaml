@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Licenta.Views.WeatherPage">
+	<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="1" HeightRequest="160" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid BackgroundColor="#758ABA" Opacity="0.4">
+				<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+					
+				</StackLayout>
+			</Grid>
+			<Grid BackgroundColor="#758ABA" Opacity="0.6" Grid.Column="1">
+
+			</Grid>
+			<Grid BackgroundColor="#758ABA" Opacity="0.8" Grid.Column="2">
+
+			</Grid>
+			<Grid BackgroundColor="#758ABA" Grid.Column="3">
+
+			</Grid>
+		</Grid>
+	</Grid>
+</ContentPage>
