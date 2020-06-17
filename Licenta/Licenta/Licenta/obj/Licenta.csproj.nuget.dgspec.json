@@ -48,6 +48,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "Xam.Plugins.TextToSpeech": {
               "target": "Package",
               "version": "[4.0.0.7, )"
@@ -58,7 +62,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.6.0.847, )"
+              "version": "[4.6.0.967, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

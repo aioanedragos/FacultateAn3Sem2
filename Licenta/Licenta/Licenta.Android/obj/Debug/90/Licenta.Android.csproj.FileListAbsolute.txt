@@ -516,3 +516,4 @@ D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta.Android\obj\Debug\90\r
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta.Android\obj\Debug\90\res\drawable\gauge.png
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta.Android\obj\Debug\90\res\drawable\w01d.png
 D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta.Android\obj\Debug\90\res\drawable\w01n.png
+D:\Facultate Git\FacultateAn3Sem2\Licenta\Licenta\Licenta.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll

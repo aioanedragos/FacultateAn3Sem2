@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K1yAy0resBwWtzmQ027qp3RE8UKWxV9+LzM00ZxfGr6iL0rVLR3NurdVJvdpbUUQlkLo1dgjfWTFAy4j4FJqmA==",
+  "dgSpecHash": "INGXzqLiuw4CGI6Xuz6+/pTm02tY46Vk3I7pilMRjtq9+KYGA47yPts1puwDKoURM2E0g8Z9+oA4Qyc9e40JSA==",
   "success": true,
   "projectFilePath": "D:\\Facultate Git\\FacultateAn3Sem2\\Licenta\\Licenta\\Licenta.iOS\\Licenta.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dragos\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\sqlitepclraw.core\\2.0.3\\sqlitepclraw.core.2.0.3.nupkg.sha512",
@@ -13,7 +14,7 @@
     "C:\\Users\\Dragos\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\xam.plugins.texttospeech\\4.0.0.7\\xam.plugins.texttospeech.4.0.0.7.nupkg.sha512",
     "C:\\Users\\Dragos\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\Dragos\\.nuget\\packages\\xamarin.forms\\4.6.0.847\\xamarin.forms.4.6.0.847.nupkg.sha512"
+    "C:\\Users\\Dragos\\.nuget\\packages\\xamarin.forms\\4.6.0.967\\xamarin.forms.4.6.0.967.nupkg.sha512"
   ],
   "logs": []
 }

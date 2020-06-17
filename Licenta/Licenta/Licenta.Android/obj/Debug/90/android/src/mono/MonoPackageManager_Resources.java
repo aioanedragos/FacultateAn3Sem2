@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"Licenta.Android.dll",
 		"FormsViewGroup.dll",
 		"Licenta.dll",
+		"Newtonsoft.Json.dll",
 		"Plugin.TextToSpeech.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
