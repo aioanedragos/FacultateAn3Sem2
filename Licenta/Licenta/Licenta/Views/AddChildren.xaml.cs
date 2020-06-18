@@ -38,7 +38,7 @@ namespace Licenta.Views
                 ChildrenName = EntryName.Text,
                 Age = Convert.ToInt32(EntryAge.Text),
                 LetterRemane = "a",
-                Accuracy = 0
+                Accuracy = "0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0"
             };
             db.Insert(children);
             await DisplayAlert(null, children.ChildrenName + " Saved", "ok");

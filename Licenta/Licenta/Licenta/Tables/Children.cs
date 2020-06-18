@@ -17,6 +17,6 @@ namespace Licenta.Tables
 
         public string LetterRemane { get; set; }
 
-        public int Accuracy { get; set; }
+        public string Accuracy { get; set; }
     }
 }
