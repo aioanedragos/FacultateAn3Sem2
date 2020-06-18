@@ -1,6 +1,9 @@
-﻿using Plugin.TextToSpeech;
+﻿using Licenta.Tables;
+using Plugin.TextToSpeech;
+using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +17,7 @@ namespace Licenta.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AlphabetLearning : ContentPage
     {
-
+        string _dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "Children.db");
         string[] AlphabetLetter = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Z" };
         string[] Words = new string[] {"Ac",
                                        "Bec",
@@ -39,14 +42,20 @@ namespace Licenta.Views
                                        "Varza",
                                        "Zebra"};
 
-        int[] Accuracy = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         int index = 0;
-        public AlphabetLearning(Guid userId)
+
+        public AlphabetLearning()
         {
             InitializeComponent();
-            var id = userId;
-            Console.WriteLine(id);
-            //LetterRemain.Text = Char.ToUpper('a').ToString(); //Interogare in baza de date pentru litera
+        }
+
+        public AlphabetLearning(Guid userId, string name)
+        {
+            InitializeComponent();
+            var db = new SQLiteConnection(_dbpath);
+            var child = db.Table<Children>().Where(x => x.ParentId == userId && x.ChildrenName == name).FirstOrDefault();
+            var index = Array.IndexOf(AlphabetLetter, child.LetterRemane.ToUpper());
+            Ceva.Text = "Litera " + AlphabetLetter[index].ToString() + " " + Words[index].ToString();
         }
 
         private void Button_Clicked(object sender, EventArgs e)

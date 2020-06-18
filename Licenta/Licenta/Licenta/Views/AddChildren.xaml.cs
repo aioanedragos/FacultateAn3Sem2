@@ -18,6 +18,8 @@ namespace Licenta.Views
 
         Guid _parentId;
 
+        int[] _accuracy = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
         string _dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments),"Children.db");
         public AddChildren(Guid parentId)
         {

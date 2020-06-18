@@ -6,7 +6,11 @@
              mc:Ignorable="d"
              x:Class="Licenta.Views.AlphabetLearning">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+		<StackLayout Orientation="Vertical">
+			<Image Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg"/>
+
+			<Label x:Name="Ceva" BackgroundColor="Red" Text="ceva" TextColor="White" VerticalTextAlignment="Center"/>
+
 			<Entry x:Name="MainEntry"
 				   Text="Enter text"/>
 
