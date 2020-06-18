@@ -46,5 +46,10 @@ namespace Licenta.Views
         {
             await Navigation.PushAsync(new NavigationPage(new UpdateChildren()));
         }
+
+        private async void Button_Clicked_6(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new WeatherPage()));
+        }
     }
 }
