@@ -12,7 +12,7 @@ namespace Licenta.Tables
 
         public int Age { get; set; }
 
-        public char LetterRemane { get; set; }
+        public string LetterRemane { get; set; }
 
         public int Accuracy { get; set; }
     }

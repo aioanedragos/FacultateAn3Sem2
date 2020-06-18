@@ -41,9 +41,11 @@ namespace Licenta.Views
 
         int[] Accuracy = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         int index = 0;
-        public AlphabetLearning()
+        public AlphabetLearning(Guid userId)
         {
             InitializeComponent();
+            var id = userId;
+            Console.WriteLine(id);
             //LetterRemain.Text = Char.ToUpper('a').ToString(); //Interogare in baza de date pentru litera
         }
 
