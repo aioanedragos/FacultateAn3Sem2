@@ -5,6 +5,9 @@ namespace Licenta.Tables
 {
     public class Children
     {
+
+        public Guid ParentId { get; set; }
+
         [PrimaryKey, AutoIncrement]
         public Guid UserId { get; set; }
         

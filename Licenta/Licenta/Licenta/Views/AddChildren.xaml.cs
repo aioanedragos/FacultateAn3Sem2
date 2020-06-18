@@ -12,15 +12,17 @@ using Licenta.Tables;
 
 namespace Licenta.Views
 {
-    
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddChildren : ContentPage
     {
 
+        Guid _parentId;
+
         string _dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments),"Children.db");
-        public AddChildren()
+        public AddChildren(Guid parentId)
         {
             InitializeComponent();
+            _parentId = parentId;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -30,6 +32,7 @@ namespace Licenta.Views
 
             Children children = new Children()
             {
+                ParentId = _parentId,
                 ChildrenName = EntryName.Text,
                 Age = Convert.ToInt32(EntryAge.Text),
                 LetterRemane = "a",

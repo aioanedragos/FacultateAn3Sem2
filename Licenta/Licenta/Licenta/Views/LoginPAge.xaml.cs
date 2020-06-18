@@ -46,7 +46,7 @@ namespace Licenta.Views
             }
 
             if (success != 0) {
-            App.Current.MainPage = new NavigationPage(new HomePage());
+            App.Current.MainPage = new NavigationPage(new HomePage(myquery.UserId));
             }
             else
             {

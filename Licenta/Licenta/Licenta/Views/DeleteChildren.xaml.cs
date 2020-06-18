@@ -17,6 +17,8 @@ namespace Licenta.Views
     {
         Children _children = new Children();
 
+        Guid _parentId;
+
         string _dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "Children.db");
 
         protected override async void OnAppearing()
@@ -25,9 +27,10 @@ namespace Licenta.Views
             listView.ItemsSource = await App.Database.GetPeopleAsync();
         }
 
-        public DeleteChildren()
+        public DeleteChildren(Guid parentId)
         {
             InitializeComponent();
+            _parentId = parentId;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -36,7 +39,7 @@ namespace Licenta.Views
             listView.ItemSelected += ListView_ItemSelected;
 
             var db = new SQLiteConnection(_dbpath);
-            db.Table<Children>().Delete(x => x.UserId == _children.UserId);
+            db.Table<Children>().Delete(x => x.UserId == _children.UserId && x.ParentId == _parentId);
             await Navigation.PopAsync();
         }
 

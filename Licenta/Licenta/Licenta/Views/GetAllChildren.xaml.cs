@@ -12,18 +12,12 @@ namespace Licenta.Views
     public partial class GetAllChildren : ContentPage
     {
 
-        //protected override async void OnAppearing()
-        //{
-         //   base.OnAppearing();
-         //   listView.ItemsSource = await App.Database.GetPeopleAsync();
-        //}
-
-        public GetAllChildren()
+        public GetAllChildren(Guid parentId)
         {
             InitializeComponent();
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Children.db");
             var db = new SQLiteConnection(dbpath);
-            var myList = db.Table<Children>().ToList(); //your list here
+            var myList = db.Table<Children>().Where(x => x.ParentId == parentId); //your list here
             MyButtons.Children.Clear(); //just in case so you can call this code several times np..
             foreach (var item in myList)
             {
