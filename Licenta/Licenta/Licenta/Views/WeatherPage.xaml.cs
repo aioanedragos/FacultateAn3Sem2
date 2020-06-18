@@ -57,6 +57,21 @@ namespace Licenta.Views
             return null;
         }
 
+        private async void GetBackground()
+        {
+            var url = $"https://api.pexels.com/v1/search?query={Location}&per_page=15&page=1";
+
+            var result = await ApiCaller.Get(url, "563492ad6f91700001000001733bd6bd34df44118aec20154ff81695");
+
+            if (result.Successful)
+            {
+                var bgInfo = JsonConvert.DeserializeObject<BackgroundInfo>(result.Response);
+
+                if (bgInfo != null && bgInfo.photos.Length > 0)
+                    bgImg.Source = ImageSource.FromUri(new Uri(bgInfo.photos[new Random().Next(0, bgInfo.photos.Length - 1)].src.medium));
+            }
+        }
+
         private async void GetWeatherInfo()
         {
             var url = $"http://api.openweathermap.org/data/2.5/weather?q={Location}&appid=5e67497a474c6e51ee2357aa0ec58fa6&units=metric";
@@ -81,6 +96,7 @@ namespace Licenta.Views
                     dateTxt.Text = dt.ToString("dddd, MMM dd").ToUpper();
 
                     GetForecast();
+                    GetBackground();
                 }
                 catch (Exception ex)
                 {
