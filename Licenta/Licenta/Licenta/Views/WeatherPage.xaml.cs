@@ -93,7 +93,7 @@ namespace Licenta.Views
                     cloudinessTxt.Text = $"{weatherInfo.clouds.all}%";
 
                     var dt = new DateTime().ToUniversalTime().AddSeconds(weatherInfo.dt);
-                    dateTxt.Text = dt.ToString("dddd, MMM dd").ToUpper();
+                    dateTxt.Text = DateTime.Now.ToString("dddd, MMM dd").ToUpper();
 
                     GetForecast();
                     GetBackground();
