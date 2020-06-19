@@ -23,22 +23,19 @@ namespace Licenta.Views
 
         Guid _parentId;
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetPeopleAsync();
-        }
 
-        public UpdateChildren( )
+        public UpdateChildren(Guid parentId)
         {
             InitializeComponent();
-
+            _parentId = parentId;
+            var db = new SQLiteConnection(_dbpath);
+            listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId).ToList();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
             var db = new SQLiteConnection(_dbpath);
-            listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId).ToList();
+            //listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId && x.ChildrenName == EntryName.Text).ToList();
             listView.ItemSelected += ListView_ItemSelected;
             if (EntryName.Text != null) {
                 Children children = new Children()
@@ -49,7 +46,7 @@ namespace Licenta.Views
                 };
 
                 db.Update(children);
-
+                listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId).ToList();
                 await Navigation.PopAsync();
             }
             

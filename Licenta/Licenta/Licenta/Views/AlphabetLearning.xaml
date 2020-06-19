@@ -6,8 +6,13 @@
              mc:Ignorable="d"
              x:Class="Licenta.Views.AlphabetLearning">
     <ContentPage.Content>
-		<StackLayout Orientation="Vertical">
-			<Image Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg"/>
+		<StackLayout Orientation="Vertical" HeightRequest="100">
+			
+				<Image x:Name="SomeImage" Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg" HorizontalOptions="Center"/>	
+			
+			
+
+
 
 			<Label x:Name="Ceva" BackgroundColor="Red" Text="ceva" TextColor="White" VerticalTextAlignment="Center"/>
 

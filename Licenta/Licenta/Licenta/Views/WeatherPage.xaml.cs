@@ -18,6 +18,7 @@ namespace Licenta.Views
         public WeatherPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             GetCoordinates();
         }
 

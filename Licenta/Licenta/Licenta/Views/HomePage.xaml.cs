@@ -46,7 +46,7 @@ namespace Licenta.Views
 
         private async void Button_Clicked_5(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NavigationPage(new UpdateChildren()));
+            await Navigation.PushAsync(new NavigationPage(new UpdateChildren(_id)));
         }
 
         private async void Button_Clicked_6(object sender, EventArgs e)
