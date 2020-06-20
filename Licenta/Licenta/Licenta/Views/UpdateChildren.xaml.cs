@@ -38,14 +38,21 @@ namespace Licenta.Views
             //listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId && x.ChildrenName == EntryName.Text).ToList();
             listView.ItemSelected += ListView_ItemSelected;
             if (EntryName.Text != null) {
+
+                Guid id = Guid.Parse(EntryId.Text);
+                string letterRemain = db.Table<Children>().Where(x => x.UserId == id).FirstOrDefault().LetterRemane;
+                string accuracy = db.Table<Children>().Where(x => x.UserId == id).FirstOrDefault().Accuracy;
+                //db.Update(children);
+                db.Table<Children>().Delete(x => x.UserId == id && x.ParentId == _parentId);
                 Children children = new Children()
                 {
-                    UserId = Guid.Parse(EntryId.Text),
                     ChildrenName = EntryName.Text,
-                    Age = Convert.ToInt32(EntryAge.Text)
+                    ParentId = _parentId,
+                    Age = Convert.ToInt32(EntryAge.Text),
+                    LetterRemane = letterRemain,
+                    Accuracy = accuracy
                 };
-
-                db.Update(children);
+                db.Insert(children);
                 listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId).ToList();
                 await Navigation.PopAsync();
             }

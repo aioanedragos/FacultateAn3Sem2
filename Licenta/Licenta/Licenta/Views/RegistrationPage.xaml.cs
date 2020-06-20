@@ -38,7 +38,6 @@ namespace Licenta.Views
                 {
                     UserName = EntryUserName.Text,
                     Password = passwordHash,
-                    Email = EntryUserEmail.Text,
                     PhoneNumber = EntryUserPhoneNumber.Text
                 };
                 db.Insert(item);
