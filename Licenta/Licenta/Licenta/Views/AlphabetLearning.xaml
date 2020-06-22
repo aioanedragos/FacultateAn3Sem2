@@ -19,7 +19,7 @@
 			<Entry x:Name="MainEntry"
 				   Text="Enter text"/>
 
-			<Button Text="Speak"
+			<Button Text="Pronunță"
 					Clicked="Button_Clicked_1"
 					BackgroundColor="HotPink" 
 					TextColor="White" 

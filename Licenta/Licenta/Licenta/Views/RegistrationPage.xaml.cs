@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Security.Cryptography;
 using System.Text;
+using System.Linq;
 
 namespace Licenta.Views
 {
@@ -20,42 +21,62 @@ namespace Licenta.Views
 
         public async void Button_Clicked(object sender, EventArgs e)
         {
+            string numbers = "0123456789";
             string passwordHash;
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RegisterUserTable.db");
             var db = new SQLiteConnection(dbpath);
             db.CreateTable<RegisterUserTable>();
-
-            var myquery = db.Table<RegisterUserTable>().Where(u => u.UserName.Equals(EntryUserName.Text)).FirstOrDefault();
-            if(myquery == null)
+            if (EntryUserName.Text != null && EntryUserPassword.Text != null && EntryUserPhoneNumber.Text != null)
             {
-                using (MD5 md5Hash = MD5.Create())
+                int success = 1;
+                for (int i = 0; i < EntryUserPhoneNumber.Text.Length; i++)
+                    if (numbers.Contains(EntryUserPhoneNumber.Text[i]) == false)
+                        success = 0;
+                if (success == 1)
                 {
-                    passwordHash = GetMd5Hash(md5Hash, EntryUserPassword.Text);
-                    Console.WriteLine("Parola din register este " + passwordHash.ToString());
+                    var myquery = db.Table<RegisterUserTable>().Where(u => u.UserName.Equals(EntryUserName.Text)).FirstOrDefault();
+                    if (myquery == null)
+                    {
+                        using (MD5 md5Hash = MD5.Create())
+                        {
+                            passwordHash = GetMd5Hash(md5Hash, EntryUserPassword.Text);
+                            Console.WriteLine("Parola din register este " + passwordHash.ToString());
+                        }
+
+                        var item = new RegisterUserTable()
+                        {
+                            UserName = EntryUserName.Text,
+                            Password = passwordHash,
+                            PhoneNumber = EntryUserPhoneNumber.Text
+                        };
+                        db.Insert(item);
+
+                        Device.BeginInvokeOnMainThread(async () =>
+                        {
+                            var result = await this.DisplayAlert("Felicitari", "Cont Creat", "Da", "Nu");
+
+                            if (result)
+                                await Navigation.PushAsync(new LoginPAge());
+                        });
+                    }
+                    else
+                    {
+                        await DisplayAlert("Eroare", "UserName deja existent", "Ok");
+                    }
                 }
-
-                var item = new RegisterUserTable()
+                else
                 {
-                    UserName = EntryUserName.Text,
-                    Password = passwordHash,
-                    PhoneNumber = EntryUserPhoneNumber.Text
-                };
-                db.Insert(item);
+                    await DisplayAlert("Eroare", "Date introduse gresit", "Ok");
+                }
+               
 
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    var result = await this.DisplayAlert("Felicitari", "Cont Creat", "Da", "Nu");
-
-                    if (result)
-                        await Navigation.PushAsync(new LoginPAge());
-                });
             }
+
             else
             {
-               await DisplayAlert("Eroare", "UserName deja existent", "Ok");
+                await DisplayAlert("Eroare", "Date introduse gresit", "Ok");
             }
-            
-            
+
         }
 
         static string GetMd5Hash(MD5 md5Hash, string input)

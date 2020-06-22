@@ -9,7 +9,7 @@
 		<StackLayout Padding="0" Margin="15,10">
 			<Entry Placeholder="ID" x:Name="EntryId" IsVisible="false"/>
 			<Entry Placeholder="Name" x:Name="EntryName"/>
-			<Entry Placeholder="Age" IsPassword="True" x:Name="EntryAge"/>	
+			<Entry Placeholder="Age" x:Name="EntryAge"/>	
 			<Button Text="Update" BackgroundColor="HotPink" TextColor="White" CornerRadius="30" Clicked="Button_Clicked"/>
 
 		</StackLayout>

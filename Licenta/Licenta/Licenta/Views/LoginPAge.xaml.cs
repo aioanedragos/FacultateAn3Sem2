@@ -26,39 +26,48 @@ namespace Licenta.Views
         {
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RegisterUserTable.db");
             var db = new SQLiteConnection(dbpath);
-            var myquery = db.Table<RegisterUserTable>().Where(u => u.UserName.Equals(EntryUser.Text)).FirstOrDefault();
-
-            var passwordHash = myquery.Password;
-            int success = 0;
-
-
-            using (MD5 md5Hash = MD5.Create())
+            if(EntryUser.Text != null && EntryPassword.Text != null)
             {
-                Console.WriteLine("Parola din register este " + VerifyMd5Hash(md5Hash, EntryPassword.Text, passwordHash).ToString());
-                if (VerifyMd5Hash(md5Hash, EntryPassword.Text, passwordHash))
+                var myquery = db.Table<RegisterUserTable>().Where(u => u.UserName.Equals(EntryUser.Text)).FirstOrDefault();
+
+                var passwordHash = myquery.Password;
+                int success = 0;
+
+
+                using (MD5 md5Hash = MD5.Create())
                 {
-                    success = 1;
+                    Console.WriteLine("Parola din register este " + VerifyMd5Hash(md5Hash, EntryPassword.Text, passwordHash).ToString());
+                    if (VerifyMd5Hash(md5Hash, EntryPassword.Text, passwordHash))
+                    {
+                        success = 1;
+                    }
+                    else
+                    {
+                        success = 0;
+                    }
+                }
+
+                if (success != 0)
+                {
+                    App.Current.MainPage = new NavigationPage(new HomePage(myquery.UserId));
                 }
                 else
                 {
-                    success = 0;
-                }
-            }
+                    Device.BeginInvokeOnMainThread(async () => {
+                        var result = await this.DisplayAlert("Eroare", "Date introduse gresit", "Da", "Nu");
+                        if (result)
+                            await Navigation.PushAsync(new LoginPAge());
+                        else
+                            await Navigation.PushAsync(new LoginPAge());
 
-            if (success != 0) {
-            App.Current.MainPage = new NavigationPage(new HomePage(myquery.UserId));
+                    });
+                }
             }
             else
             {
-                Device.BeginInvokeOnMainThread(async () => {
-                    var result = await this.DisplayAlert("Eroare", "Date introduse gresit", "Da", "Nu");
-                    if (result)
-                        await Navigation.PushAsync(new LoginPAge());
-                    else
-                        await Navigation.PushAsync(new LoginPAge());
-
-                });
+                await this.DisplayAlert("Eroare", "Introduceti datele contului", "OK");
             }
+           
         }
 
         static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)

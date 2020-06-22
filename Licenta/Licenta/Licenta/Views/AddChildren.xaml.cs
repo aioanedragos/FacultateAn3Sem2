@@ -24,6 +24,7 @@ namespace Licenta.Views
         public AddChildren(Guid parentId)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             _parentId = parentId;
         }
 
@@ -31,18 +32,38 @@ namespace Licenta.Views
         {
             var db = new SQLiteConnection(_dbpath);
             db.CreateTable<Children>();
-
-            Children children = new Children()
+            if(EntryName.Text != null && EntryAge.Text != null)
             {
-                ParentId = _parentId,
-                ChildrenName = EntryName.Text,
-                Age = Convert.ToInt32(EntryAge.Text),
-                LetterRemane = "a",
-                Accuracy = "0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0"
-            };
-            db.Insert(children);
-            await DisplayAlert(null, children.ChildrenName + " Saved", "ok");
-            await Navigation.PopAsync();
+                int succes = 1;
+                string numbers = "0123456789";
+                for (int i = 0; i < EntryAge.Text.Length; i++)
+                    if (numbers.Contains(EntryAge.Text[i]) == false)
+                        succes = 0;
+                if (succes == 1)
+                {
+                    Children children = new Children()
+                    {
+                        ParentId = _parentId,
+                        ChildrenName = EntryName.Text,
+                        Age = Convert.ToInt32(EntryAge.Text),
+                        LetterRemane = "a",
+                        Accuracy = "0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0"
+                    };
+                    db.Insert(children);
+                    await DisplayAlert(null, children.ChildrenName + " Saved", "ok");
+                    await Navigation.PopAsync();
+
+                }
+                else
+                {
+                    await DisplayAlert("Eroare", "Varsta nu este introdusa corect", "Ok");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Eroare", "Datele sunt introduse gresit", "Ok");
+            }
+            
 
         }
     }

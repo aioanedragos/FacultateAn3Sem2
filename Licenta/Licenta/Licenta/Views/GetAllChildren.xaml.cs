@@ -15,6 +15,7 @@ namespace Licenta.Views
         public GetAllChildren(Guid parentId)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             ceva = parentId;
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Children.db");
             var db = new SQLiteConnection(dbpath);

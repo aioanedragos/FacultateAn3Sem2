@@ -27,6 +27,7 @@ namespace Licenta.Views
         public UpdateChildren(Guid parentId)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             _parentId = parentId;
             var db = new SQLiteConnection(_dbpath);
             listView.ItemsSource = db.Table<Children>().Where(x => x.ParentId == _parentId).ToList();
